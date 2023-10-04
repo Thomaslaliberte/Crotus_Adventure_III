@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfb2rdp3tgj18"]
+
+[ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/mossy_entre.tscn" id="1_oktic"]
+[ext_resource type="PackedScene" uid="uid://b027tx06rw5lc" path="res://Scenes/magicien.tscn" id="2_uo13m"]
+
+[node name="Main" type="Node"]
+
+[node name="mossy_entre" parent="." instance=ExtResource("1_oktic")]
+
+[node name="magicien" parent="." instance=ExtResource("2_uo13m")]
+position = Vector2(48, 120)
