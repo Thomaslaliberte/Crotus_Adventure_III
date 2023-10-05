@@ -149,7 +149,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xipg2")
 }],
-"loop": true,
+"loop": false,
 "name": &"attaque",
 "speed": 8.0
 }, {
@@ -233,8 +233,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ylb83"]
-radius = 10.02
-height = 36.07
+radius = 11.0
+height = 42.0
 
 [node name="magicien" type="CharacterBody2D"]
 script = ExtResource("1_ohgg4")
@@ -244,7 +244,7 @@ position = Vector2(5, 0)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_vspqw")
 animation = &"cour"
-frame_progress = 0.705911
 
 [node name="magicien_hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(5, 3)
 shape = SubResource("CapsuleShape2D_ylb83")

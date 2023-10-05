@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl6gjqlxan551"]
+
+[ext_resource type="Texture2D" uid="uid://cp25y7l7eh7xi" path="res://Assets/Campfire36.png" id="1_56cii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsnfi"]
+atlas = ExtResource("1_56cii")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wldv3"]
+atlas = ExtResource("1_56cii")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4mko"]
+atlas = ExtResource("1_56cii")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuw4a"]
+atlas = ExtResource("1_56cii")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hm56d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsnfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wldv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4mko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuw4a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqjv5"]
+
+[node name="feu" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="feu_anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_hm56d")
+
+[node name="feu_collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kqjv5")
