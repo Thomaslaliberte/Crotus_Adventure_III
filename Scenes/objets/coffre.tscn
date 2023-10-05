@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://5iwxpo1xmo3i"]
+
+[ext_resource type="Texture2D" uid="uid://p7v3okctyujk" path="res://Assets/pixel_art_treasure_chests/sharp/iron/chest_iron_no_coins.png" id="1_js7h4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcrhb"]
+atlas = ExtResource("1_js7h4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww5it"]
+atlas = ExtResource("1_js7h4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51byn"]
+atlas = ExtResource("1_js7h4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_attbb"]
+atlas = ExtResource("1_js7h4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a2em"]
+atlas = ExtResource("1_js7h4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vthb"]
+atlas = ExtResource("1_js7h4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe286"]
+atlas = ExtResource("1_js7h4")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0f7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcrhb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww5it")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51byn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_attbb")
+}],
+"loop": false,
+"name": &"fermer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a2em")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vthb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe286")
+}],
+"loop": false,
+"name": &"ouvrir",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tkfwf"]
+radius = 21.095
+
+[node name="coffre" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="coffre_anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -2)
+sprite_frames = SubResource("SpriteFrames_e0f7d")
+flip_h = true
+
+[node name="coffre_collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_tkfwf")

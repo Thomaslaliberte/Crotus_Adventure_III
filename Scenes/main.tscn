@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfb2rdp3tgj18"]
+[gd_scene load_steps=2 format=3 uid="uid://bfb2rdp3tgj18"]
 
-[ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/mossy_entre.tscn" id="1_oktic"]
-[ext_resource type="PackedScene" uid="uid://b027tx06rw5lc" path="res://Scenes/magicien.tscn" id="2_uo13m"]
+[ext_resource type="PackedScene" uid="uid://cqha57ppv2to6" path="res://Scenes/niveaux/mossy_niv_1.tscn" id="1_oebt3"]
 
 [node name="Main" type="Node"]
 
-[node name="mossy_entre" parent="." instance=ExtResource("1_oktic")]
-
-[node name="magicien" parent="." instance=ExtResource("2_uo13m")]
-position = Vector2(48, 120)
+[node name="mossy_niv_1" parent="." instance=ExtResource("1_oebt3")]
