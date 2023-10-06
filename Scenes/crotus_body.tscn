@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://bpo4in3r31naa"]
 
-[ext_resource type="Script" path="res://Scenes/crotus_body.gd" id="1_m7xo4"]
+[ext_resource type="Script" path="res://Scripts/crotus_body.gd" id="1_m7xo4"]
 [ext_resource type="Texture2D" uid="uid://bqj4b7jyxmvd4" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Run.png" id="1_sljnc"]
 [ext_resource type="Texture2D" uid="uid://55hn4e2hv51y" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Attack.png" id="2_2brn5"]
 [ext_resource type="Texture2D" uid="uid://d2lgu60dksvdu" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Idle.png" id="2_kygse"]

@@ -9,9 +9,9 @@ var gravity = 950
 
 func get_input():
 	velocity.x = 0
-	var down = Input.is_action_pressed("ui_down")
-	var right = Input.is_action_pressed('ui_right')
-	var left = Input.is_action_pressed('ui_left')
+	var down = Input.is_action_pressed('bas')
+	var right = Input.is_action_pressed('droite')
+	var left = Input.is_action_pressed('gauche')
 	var jump = Input.is_action_just_pressed('ui_select')
 	var atk = Input.is_action_just_pressed("attaque")
 	
@@ -33,8 +33,8 @@ func get_input():
 		
 func crotus_anim():
 	
-	var down = Input.is_action_pressed("ui_down")
-	var down_deb = Input.is_action_just_pressed("ui_down")
+	var down = Input.is_action_pressed("bas")
+	var down_deb = Input.is_action_just_pressed("bas")
 	if velocity.x > 0 and is_on_floor():
 		$crotus_anim.flip_h = false		
 		if down:

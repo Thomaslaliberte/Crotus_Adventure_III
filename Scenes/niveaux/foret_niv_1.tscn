@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://br2jwcmc5t46n"]
+
+[ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
+[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/crotus_body.tscn" id="2_nr3q8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="foret_base" parent="." instance=ExtResource("1_dgxfq")]
+
+[node name="crotus_body" parent="." instance=ExtResource("2_nr3q8")]
+position = Vector2(1991, 157)
+
+[node name="Camera2D" type="Camera2D" parent="crotus_body"]
+zoom = Vector2(3, 3)
