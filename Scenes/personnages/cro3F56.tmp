@@ -1,6 +1,5 @@
-[gd_scene load_steps=75 format=3 uid="uid://bpo4in3r31naa"]
+[gd_scene load_steps=64 format=3 uid="uid://bpo4in3r31naa"]
 
-[ext_resource type="Script" path="res://Scripts/etats_crotus/crotus_principal.gd" id="1_7awpa"]
 [ext_resource type="Texture2D" uid="uid://bqj4b7jyxmvd4" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Run.png" id="1_sljnc"]
 [ext_resource type="Texture2D" uid="uid://55hn4e2hv51y" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Attack.png" id="2_2brn5"]
 [ext_resource type="Texture2D" uid="uid://d2lgu60dksvdu" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Idle.png" id="2_kygse"]
@@ -13,12 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cplmmiiui1mmj" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_CrouchWalk.png" id="6_ohwq6"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/machine_etat.gd" id="11_jdaog"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/rien.gd" id="12_on6ha"]
-[ext_resource type="Texture2D" uid="uid://dpnjob5g28hop" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Slide.png" id="12_p25pf"]
-[ext_resource type="Texture2D" uid="uid://bhfj7wkqldoog" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_SlideTransitionStart.png" id="13_jgya5"]
-[ext_resource type="Script" path="res://Scripts/etats_crotus/saut.gd" id="14_wkcid"]
-[ext_resource type="Script" path="res://Scripts/etats_crotus/course.gd" id="15_r5m4o"]
-[ext_resource type="Script" path="res://Scripts/etats_crotus/en_air.gd" id="16_exgt5"]
-[ext_resource type="Script" path="res://Scripts/etats_crotus/glissade.gd" id="19_nuh68"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf842"]
 atlas = ExtResource("2_2brn5")
@@ -215,18 +208,6 @@ region = Rect2(0, 0, 120, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_726va"]
 atlas = ExtResource("5_b5d82")
 region = Rect2(120, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wk17x"]
-atlas = ExtResource("12_p25pf")
-region = Rect2(0, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1qla"]
-atlas = ExtResource("12_p25pf")
-region = Rect2(120, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uck6g"]
-atlas = ExtResource("13_jgya5")
-region = Rect2(0, 0, 120, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5346"]
 animations = [{
@@ -432,47 +413,24 @@ animations = [{
 "name": &"crotus_saut_fin",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wk17x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f1qla")
-}],
+"frames": [],
 "loop": true,
-"name": &"crotus_slide",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uck6g")
-}],
-"loop": false,
-"name": &"crotus_slide_debut",
+"name": &"new_animation_1",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0obn"]
-height = 42.5
+height = 44.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc8gs"]
-size = Vector2(33, 20)
-
-[node name="crotus_body" type="CharacterBody2D" groups=["joueur"]]
-script = ExtResource("1_7awpa")
+[node name="crotus_body" type="CharacterBody2D"]
 
 [node name="crotus_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -18)
 sprite_frames = SubResource("SpriteFrames_p5346")
-animation = &"crotus_slide"
+animation = &"crotus_flip"
 
 [node name="crotus_coli" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t0obn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 10)
-shape = SubResource("RectangleShape2D_uc8gs")
-disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -482,24 +440,7 @@ drag_horizontal_enabled = true
 
 [node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]
 script = ExtResource("11_jdaog")
-etat_actuel = NodePath("rien")
+etat_actuel = NodePath("")
 
-[node name="rien" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+[node name="rien" type="Node" parent="machine_etat"]
 script = ExtResource("12_on6ha")
-acteur = NodePath("../..")
-
-[node name="saut" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
-script = ExtResource("14_wkcid")
-acteur = NodePath("../..")
-
-[node name="course" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
-script = ExtResource("15_r5m4o")
-acteur = NodePath("../..")
-
-[node name="en_air" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
-script = ExtResource("16_exgt5")
-acteur = NodePath("../..")
-
-[node name="glissade" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
-script = ExtResource("19_nuh68")
-acteur = NodePath("../..")

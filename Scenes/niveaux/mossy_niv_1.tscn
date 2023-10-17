@@ -27,8 +27,3 @@ position = Vector2(813, 589)
 
 [node name="crotus_body" parent="." instance=ExtResource("6_g3brj")]
 position = Vector2(42, 125)
-
-[node name="Camera2D2" type="Camera2D" parent="crotus_body"]
-position = Vector2(-5, 0)
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
