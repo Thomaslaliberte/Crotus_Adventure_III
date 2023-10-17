@@ -23,4 +23,4 @@ position = Vector2(2200, 84)
 position = Vector2(2365, 419)
 
 [node name="crotus_body" parent="." instance=ExtResource("4_0kwbg")]
-position = Vector2(436, 503)
+position = Vector2(406, 541)
