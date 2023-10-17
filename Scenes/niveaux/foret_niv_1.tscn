@@ -1,20 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
-[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/crotus_body.tscn" id="2_nr3q8"]
 [ext_resource type="PackedScene" uid="uid://bgm4vvo3mcxct" path="res://Scenes/objets/bottletscn.tscn" id="3_b35xr"]
+[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="4_0kwbg"]
 [ext_resource type="PackedScene" uid="uid://df23w52x1m7l1" path="res://Scenes/objets/piece.tscn" id="4_xl25e"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="foret_base" parent="." instance=ExtResource("1_dgxfq")]
-
-[node name="crotus_body" parent="." instance=ExtResource("2_nr3q8")]
-position = Vector2(1991, 157)
-
-[node name="Camera2D" type="Camera2D" parent="crotus_body"]
-zoom = Vector2(3, 3)
-limit_left = 0
+script = null
 
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
 position = Vector2(2188, -253)
@@ -27,3 +21,6 @@ position = Vector2(2200, 84)
 
 [node name="piece_area3" parent="." instance=ExtResource("4_xl25e")]
 position = Vector2(2365, 419)
+
+[node name="crotus_body" parent="." instance=ExtResource("4_0kwbg")]
+position = Vector2(436, 503)

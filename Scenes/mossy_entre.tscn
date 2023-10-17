@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dv83ud5gawewv"]
 
-[ext_resource type="PackedScene" uid="uid://cpu6rfv88skpe" path="res://Scenes/mossy_base.tscn" id="1_d1wit"]
+[ext_resource type="PackedScene" uid="uid://cpu6rfv88skpe" path="res://Scenes/niveaux/mossy_base.tscn" id="1_d1wit"]
 
 [node name="mossy_entre" instance=ExtResource("1_d1wit")]
 

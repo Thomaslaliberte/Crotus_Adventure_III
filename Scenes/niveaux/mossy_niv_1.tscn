@@ -1,14 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqha57ppv2to6"]
+[gd_scene load_steps=6 format=3 uid="uid://cqha57ppv2to6"]
 
-[ext_resource type="Script" path="res://Scripts/mossy_niv_1.gd" id="1_vhul7"]
 [ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/mossy_entre.tscn" id="2_nfnrh"]
 [ext_resource type="PackedScene" uid="uid://5iwxpo1xmo3i" path="res://Scenes/objets/coffre.tscn" id="3_dyfu3"]
 [ext_resource type="PackedScene" uid="uid://cl6gjqlxan551" path="res://Scenes/objets/feu.tscn" id="4_yheu6"]
 [ext_resource type="PackedScene" uid="uid://cdfq35481214f" path="res://Scenes/ennemis/ennemi_champignon.tscn" id="5_2epn8"]
-[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/crotus_body.tscn" id="6_g3brj"]
+[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="6_g3brj"]
 
 [node name="mossy_niv_1" type="Node2D"]
-script = ExtResource("1_vhul7")
 
 [node name="mossy_entre" parent="." instance=ExtResource("2_nfnrh")]
 
@@ -30,7 +28,7 @@ position = Vector2(813, 589)
 [node name="crotus_body" parent="." instance=ExtResource("6_g3brj")]
 position = Vector2(42, 125)
 
-[node name="Camera2D" type="Camera2D" parent="crotus_body"]
+[node name="Camera2D2" type="Camera2D" parent="crotus_body"]
 position = Vector2(-5, 0)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
