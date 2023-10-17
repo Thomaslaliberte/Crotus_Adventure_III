@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://5iwxpo1xmo3i" path="res://Scenes/objets/coffre.tscn" id="3_dyfu3"]
 [ext_resource type="PackedScene" uid="uid://cl6gjqlxan551" path="res://Scenes/objets/feu.tscn" id="4_yheu6"]
 [ext_resource type="PackedScene" uid="uid://cdfq35481214f" path="res://Scenes/ennemis/ennemi_champignon.tscn" id="5_2epn8"]
-[ext_resource type="PackedScene" uid="uid://b027tx06rw5lc" path="res://Scenes/magicien.tscn" id="6_1hstb"]
+[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/crotus_body.tscn" id="6_g3brj"]
 
 [node name="mossy_niv_1" type="Node2D"]
 script = ExtResource("1_vhul7")
@@ -22,13 +22,15 @@ position = Vector2(1132, 986)
 position = Vector2(207, 177)
 
 [node name="ennemi_champignon2" parent="." instance=ExtResource("5_2epn8")]
-position = Vector2(1078, 207)
-
-[node name="magicien" parent="." instance=ExtResource("6_1hstb")]
-position = Vector2(37, 125)
-
-[node name="Camera2D" type="Camera2D" parent="magicien"]
-zoom = Vector2(3, 3)
+position = Vector2(1077, 197)
 
 [node name="ennemi_champignon3" parent="." instance=ExtResource("5_2epn8")]
 position = Vector2(813, 589)
+
+[node name="crotus_body" parent="." instance=ExtResource("6_g3brj")]
+position = Vector2(42, 125)
+
+[node name="Camera2D" type="Camera2D" parent="crotus_body"]
+position = Vector2(-5, 0)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true

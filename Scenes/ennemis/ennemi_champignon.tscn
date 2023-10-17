@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdfq35481214f"]
+[gd_scene load_steps=27 format=3 uid="uid://cdfq35481214f"]
 
 [ext_resource type="Texture2D" uid="uid://bhjhjo32ocv85" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Attack.png" id="1_ihuil"]
+[ext_resource type="Script" path="res://Scripts/ennemi_champignon.gd" id="1_u6mep"]
 [ext_resource type="Texture2D" uid="uid://d1xgb1b2ivhd6" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Idle.png" id="2_hf572"]
+[ext_resource type="Texture2D" uid="uid://c2rbykq7svtwq" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Run.png" id="3_df5rv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqyco"]
 atlas = ExtResource("1_ihuil")
@@ -33,6 +35,38 @@ region = Rect2(900, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4w6j"]
 atlas = ExtResource("1_ihuil")
+region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmy4i"]
+atlas = ExtResource("3_df5rv")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65rpe"]
+atlas = ExtResource("3_df5rv")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wselg"]
+atlas = ExtResource("3_df5rv")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sradt"]
+atlas = ExtResource("3_df5rv")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is4a2"]
+atlas = ExtResource("3_df5rv")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lsyx"]
+atlas = ExtResource("3_df5rv")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4sel"]
+atlas = ExtResource("3_df5rv")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfliv"]
+atlas = ExtResource("3_df5rv")
 region = Rect2(1050, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u2icg"]
@@ -80,6 +114,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"attaque",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmy4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65rpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wselg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sradt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is4a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lsyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4sel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfliv")
+}],
+"loop": true,
+"name": &"courir",
 "speed": 7.0
 }, {
 "frames": [{
@@ -105,12 +168,12 @@ radius = 12.0
 height = 36.0
 
 [node name="ennemi_champignon" type="CharacterBody2D"]
+script = ExtResource("1_u6mep")
 
 [node name="champignon_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_4byw1")
 animation = &"attaque"
-frame_progress = 0.383569
 
 [node name="champignon_collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_80v78")
