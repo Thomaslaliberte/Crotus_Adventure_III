@@ -1,7 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfb2rdp3tgj18"]
-
-[ext_resource type="PackedScene" uid="uid://cqha57ppv2to6" path="res://Scenes/niveaux/mossy_niv_1.tscn" id="1_oebt3"]
+[gd_scene format=3 uid="uid://bfb2rdp3tgj18"]
 
 [node name="Main" type="Node"]
-
-[node name="mossy_niv_1" parent="." instance=ExtResource("1_oebt3")]
