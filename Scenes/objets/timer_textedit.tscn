@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b514idn7mhkcp"]
+
+[ext_resource type="Script" path="res://Scripts/interface/timer_textedit.gd" id="1_0qug6"]
+
+[node name="timer_textedit" type="TextEdit"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_0qug6")
+
+[node name="timer_timer" type="Timer" parent="."]
+autostart = true

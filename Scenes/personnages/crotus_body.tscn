@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bpo4in3r31naa"]
+[gd_scene load_steps=86 format=3 uid="uid://bpo4in3r31naa"]
 
 [ext_resource type="Script" path="res://Scripts/etats_crotus/crotus_principal.gd" id="1_7awpa"]
 [ext_resource type="Texture2D" uid="uid://bqj4b7jyxmvd4" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Run.png" id="1_sljnc"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cliuig5fsdbrl" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Crouch.png" id="5_j44nt"]
 [ext_resource type="Texture2D" uid="uid://cplmmiiui1mmj" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_CrouchWalk.png" id="6_ohwq6"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/machine_etat.gd" id="11_jdaog"]
+[ext_resource type="Texture2D" uid="uid://dber84ivi1krv" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Roll.png" id="11_m2jn0"]
+[ext_resource type="Texture2D" uid="uid://menelj8y84wy" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Fall.png" id="12_i6u14"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/rien.gd" id="12_on6ha"]
 [ext_resource type="Texture2D" uid="uid://dpnjob5g28hop" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Slide.png" id="12_p25pf"]
 [ext_resource type="Texture2D" uid="uid://bhfj7wkqldoog" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_SlideTransitionStart.png" id="13_jgya5"]
@@ -19,6 +21,7 @@
 [ext_resource type="Script" path="res://Scripts/etats_crotus/course.gd" id="15_r5m4o"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/en_air.gd" id="16_exgt5"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/glissade.gd" id="19_nuh68"]
+[ext_resource type="Script" path="res://Scripts/etats_crotus/saut_x2.gd" id="20_x4jx8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf842"]
 atlas = ExtResource("2_2brn5")
@@ -208,13 +211,45 @@ region = Rect2(960, 0, 120, 80)
 atlas = ExtResource("2_kygse")
 region = Rect2(1080, 0, 120, 80)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe3op"]
+atlas = ExtResource("11_m2jn0")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sldu"]
+atlas = ExtResource("11_m2jn0")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj3ef"]
+atlas = ExtResource("11_m2jn0")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1y8p"]
+atlas = ExtResource("11_m2jn0")
+region = Rect2(360, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcn3d"]
+atlas = ExtResource("11_m2jn0")
+region = Rect2(480, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pybu2"]
+atlas = ExtResource("11_m2jn0")
+region = Rect2(600, 0, 120, 80)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_chd7x"]
 atlas = ExtResource("5_b5d82")
 region = Rect2(0, 0, 120, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_726va"]
-atlas = ExtResource("5_b5d82")
+[sub_resource type="AtlasTexture" id="AtlasTexture_58cmj"]
+atlas = ExtResource("12_i6u14")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g36qh"]
+atlas = ExtResource("12_i6u14")
 region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5eit"]
+atlas = ExtResource("12_i6u14")
+region = Rect2(240, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wk17x"]
 atlas = ExtResource("12_p25pf")
@@ -414,7 +449,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"crotus_rien",
-"speed": 15.0
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe3op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sldu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj3ef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1y8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcn3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pybu2")
+}],
+"loop": false,
+"name": &"crotus_rolade",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -426,7 +484,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_726va")
+"texture": SubResource("AtlasTexture_58cmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g36qh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5eit")
 }],
 "loop": true,
 "name": &"crotus_saut_fin",
@@ -453,10 +517,10 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0obn"]
-height = 42.5
+height = 44.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uc8gs"]
-size = Vector2(33, 20)
+size = Vector2(33, 18.3)
 
 [node name="crotus_body" type="CharacterBody2D" groups=["joueur"]]
 script = ExtResource("1_7awpa")
@@ -464,13 +528,13 @@ script = ExtResource("1_7awpa")
 [node name="crotus_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -18)
 sprite_frames = SubResource("SpriteFrames_p5346")
-animation = &"crotus_slide"
+animation = &"crotus_rolade"
 
 [node name="crotus_coli" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t0obn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 10)
+[node name="crotus_slide_coli" type="CollisionShape2D" parent="."]
+position = Vector2(3, 12.85)
 shape = SubResource("RectangleShape2D_uc8gs")
 disabled = true
 
@@ -502,4 +566,8 @@ acteur = NodePath("../..")
 
 [node name="glissade" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
 script = ExtResource("19_nuh68")
+acteur = NodePath("../..")
+
+[node name="saut_x2" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("20_x4jx8")
 acteur = NodePath("../..")

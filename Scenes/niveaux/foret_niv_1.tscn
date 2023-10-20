@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://br2jwcmc5t46n"]
+[gd_scene load_steps=6 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
 [ext_resource type="PackedScene" uid="uid://bgm4vvo3mcxct" path="res://Scenes/objets/bottletscn.tscn" id="3_b35xr"]
 [ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="4_0kwbg"]
+[ext_resource type="PackedScene" uid="uid://c5imn10j8wbae" path="res://Scenes/niveaux/glissade_area_2d.tscn" id="4_nfqdj"]
+[ext_resource type="PackedScene" uid="uid://b514idn7mhkcp" path="res://Scenes/objets/timer_textedit.tscn" id="5_d52np"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,8 +12,26 @@
 script = null
 
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
-position = Vector2(221, 558)
+position = Vector2(2580, 408)
 
 [node name="crotus_body" parent="." instance=ExtResource("4_0kwbg")]
-position = Vector2(568, 475)
+position = Vector2(2636, 389)
 floor_snap_length = 10.0
+
+[node name="glissade_area2d" parent="." instance=ExtResource("4_nfqdj")]
+position = Vector2(2747, 408)
+
+[node name="glissade_area2d2" parent="." instance=ExtResource("4_nfqdj")]
+position = Vector2(2723, 408)
+
+[node name="glissade_area2d3" parent="." instance=ExtResource("4_nfqdj")]
+position = Vector2(2795, 408)
+
+[node name="glissade_area2d4" parent="." instance=ExtResource("4_nfqdj")]
+position = Vector2(2771, 408)
+
+[node name="timer_textedit" parent="." instance=ExtResource("5_d52np")]
+offset_left = 2473.0
+offset_top = 303.0
+offset_right = 2578.0
+offset_bottom = 357.0
