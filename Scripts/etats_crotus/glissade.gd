@@ -19,9 +19,9 @@ func Process(_delta):
 		acteur.velocity.x = -1.5*acteur.run_speed
 	
 	print(temps)
-	if acteur.is_on_ceiling():
-		temps -= 1
-	
+	if acteur.is_on_wall():
+		temps = 50
+
 	if temps >= 50:
 		print(acteur.lever)
 		if !acteur.lever:

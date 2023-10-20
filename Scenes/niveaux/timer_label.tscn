@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://h1wr8b6baxbi"]
+
+[ext_resource type="Script" path="res://Scripts/interface/timer_label.gd" id="1_i8rl3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eq2eo"]
+font_size = 48
+font_color = Color(1, 1, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.0078125, 0.0078125, 0.0078125, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="timer_label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00 00"
+label_settings = SubResource("LabelSettings_eq2eo")
+script = ExtResource("1_i8rl3")
