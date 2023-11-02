@@ -31,6 +31,7 @@ func Process(_delta):
 			etat_change.emit("saut")
 		elif acteur.saut_x2 == 1:
 			etat_change.emit("saut_x2")
+
 	if acteur.glissade == true:
 		if glissade:
 			if acteur.is_on_floor():
