@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bsxrxcftafjn1"
-path="res://.godot/imported/Light Ambient 4 (Loop).mp3-56b0c00df1fa157965206a035584bea4.mp3str"
+path="res://.godot/imported/Light Ambient 4 (Loop).mp3-5b24ad29c595d7e1a78952391cf37458.mp3str"
 
 [deps]
 
-source_file="res://Assets/music/Light Ambient 4 (Loop).mp3"
-dest_files=["res://.godot/imported/Light Ambient 4 (Loop).mp3-56b0c00df1fa157965206a035584bea4.mp3str"]
+source_file="res://Assets/Musique/Light Ambient 4 (Loop).mp3"
+dest_files=["res://.godot/imported/Light Ambient 4 (Loop).mp3-5b24ad29c595d7e1a78952391cf37458.mp3str"]
 
 [params]
 

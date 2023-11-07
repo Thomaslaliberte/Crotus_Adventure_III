@@ -4,7 +4,7 @@ extends "res://Scripts/etats_crotus/etat.gd"
 
 func Initialisation():
 	acteur.get_child(0).play("crotus_saut_fin")
-
+	
 
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
