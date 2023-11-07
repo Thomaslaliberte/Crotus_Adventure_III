@@ -12,7 +12,7 @@
 script = null
 
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
-position = Vector2(2190, -256)
+position = Vector2(2205, -263)
 
 [node name="crotus_body" parent="." instance=ExtResource("4_0kwbg")]
 position = Vector2(2636, 389)

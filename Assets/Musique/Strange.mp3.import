@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bymcu0ooeo5id"
-path="res://.godot/imported/Strange.mp3-fedb9e6797eb3757421ba3dd56565ac5.mp3str"
+path="res://.godot/imported/Strange.mp3-e66987bd8d4495985a806b78522d7f34.mp3str"
 
 [deps]
 
-source_file="res://Assets/music/Strange.mp3"
-dest_files=["res://.godot/imported/Strange.mp3-fedb9e6797eb3757421ba3dd56565ac5.mp3str"]
+source_file="res://Assets/Musique/Strange.mp3"
+dest_files=["res://.godot/imported/Strange.mp3-e66987bd8d4495985a806b78522d7f34.mp3str"]
 
 [params]
 

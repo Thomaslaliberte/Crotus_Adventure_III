@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bwt14yj4cau65"
-path="res://.godot/imported/Night Ambient 2 (Loop).mp3-e77c3d2588d7d1435c32c7c289ae4dc8.mp3str"
+path="res://.godot/imported/Night Ambient 2 (Loop).mp3-24574cd770627141053318bb9545d5f5.mp3str"
 
 [deps]
 
-source_file="res://Assets/music/Night Ambient 2 (Loop).mp3"
-dest_files=["res://.godot/imported/Night Ambient 2 (Loop).mp3-e77c3d2588d7d1435c32c7c289ae4dc8.mp3str"]
+source_file="res://Assets/Musique/Night Ambient 2 (Loop).mp3"
+dest_files=["res://.godot/imported/Night Ambient 2 (Loop).mp3-24574cd770627141053318bb9545d5f5.mp3str"]
 
 [params]
 

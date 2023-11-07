@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://bpo4in3r31naa"]
+[gd_scene load_steps=89 format=3 uid="uid://bpo4in3r31naa"]
 
 [ext_resource type="Script" path="res://Scripts/etats_crotus/crotus_principal.gd" id="1_7awpa"]
 [ext_resource type="Texture2D" uid="uid://bqj4b7jyxmvd4" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Run.png" id="1_sljnc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c1kw3gidts1j0" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_CrouchAll.png" id="5_bceab"]
 [ext_resource type="Texture2D" uid="uid://cliuig5fsdbrl" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Crouch.png" id="5_j44nt"]
 [ext_resource type="Texture2D" uid="uid://cplmmiiui1mmj" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_CrouchWalk.png" id="6_ohwq6"]
+[ext_resource type="Texture2D" uid="uid://djbeyum3a5njr" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_CrouchTransition.png" id="7_q2pt2"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/machine_etat.gd" id="11_jdaog"]
 [ext_resource type="Texture2D" uid="uid://dber84ivi1krv" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Roll.png" id="11_m2jn0"]
 [ext_resource type="Texture2D" uid="uid://menelj8y84wy" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Fall.png" id="12_i6u14"]
@@ -22,6 +23,7 @@
 [ext_resource type="Script" path="res://Scripts/etats_crotus/en_air.gd" id="16_exgt5"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/glissade.gd" id="19_nuh68"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/saut_x2.gd" id="20_x4jx8"]
+[ext_resource type="Script" path="res://Scripts/etats_crotus/acroupie.gd" id="23_ikscw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf842"]
 atlas = ExtResource("2_2brn5")
@@ -114,6 +116,10 @@ region = Rect2(0, 0, 120, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3ood"]
 atlas = ExtResource("5_bceab")
 region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xb8i"]
+atlas = ExtResource("7_q2pt2")
+region = Rect2(0, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6y5yx"]
 atlas = ExtResource("6_ohwq6")
@@ -354,10 +360,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a3ood")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xb8i")
 }],
-"loop": false,
+"loop": true,
 "name": &"crotus_crouch_debut",
-"speed": 2.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -400,7 +409,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"crotus_en_air",
-"speed": 7.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -528,7 +537,7 @@ script = ExtResource("1_7awpa")
 [node name="crotus_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -18)
 sprite_frames = SubResource("SpriteFrames_p5346")
-animation = &"crotus_rolade"
+animation = &"crotus_crouch_debut"
 
 [node name="crotus_coli" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t0obn")
@@ -570,4 +579,8 @@ acteur = NodePath("../..")
 
 [node name="saut_x2" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
 script = ExtResource("20_x4jx8")
+acteur = NodePath("../..")
+
+[node name="acroupie" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("23_ikscw")
 acteur = NodePath("../..")
