@@ -548,7 +548,7 @@ position = Vector2(3, 12.85)
 shape = SubResource("RectangleShape2D_uc8gs")
 disabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["joueur"]]
 zoom = Vector2(2.5, 2.5)
 limit_left = -10
 position_smoothing_enabled = true
