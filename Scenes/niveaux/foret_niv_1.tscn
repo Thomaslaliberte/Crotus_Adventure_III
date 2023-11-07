@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://br2jwcmc5t46n"]
+[gd_scene load_steps=7 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
+[ext_resource type="Script" path="res://Scripts/camera_foret.gd" id="1_q4gs5"]
 [ext_resource type="PackedScene" uid="uid://bgm4vvo3mcxct" path="res://Scenes/objets/bottletscn.tscn" id="3_b35xr"]
 [ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="4_0kwbg"]
 [ext_resource type="PackedScene" uid="uid://c5imn10j8wbae" path="res://Scenes/niveaux/glissade_area_2d.tscn" id="4_nfqdj"]
 [ext_resource type="PackedScene" uid="uid://h1wr8b6baxbi" path="res://Scenes/niveaux/timer_label.tscn" id="5_88uia"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_q4gs5")
 
 [node name="foret_base" parent="." instance=ExtResource("1_dgxfq")]
 script = null

@@ -1,9 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://cdfq35481214f"]
+[gd_scene load_steps=33 format=3 uid="uid://cdfq35481214f"]
 
 [ext_resource type="Texture2D" uid="uid://bhjhjo32ocv85" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Attack.png" id="1_ihuil"]
-[ext_resource type="Script" path="res://Scripts/ennemi_champignon.gd" id="1_u6mep"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/ennemi_champignon.gd" id="1_pcuv2"]
 [ext_resource type="Texture2D" uid="uid://d1xgb1b2ivhd6" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Idle.png" id="2_hf572"]
 [ext_resource type="Texture2D" uid="uid://c2rbykq7svtwq" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Run.png" id="3_df5rv"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/machine_etat_champi.gd" id="4_7hcqf"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/rien.gd" id="6_n6mhj"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/droite.gd" id="7_uawmp"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/gauche.gd" id="8_vwta0"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/attaquer.gd" id="9_8rjxq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqyco"]
 atlas = ExtResource("1_ihuil")
@@ -167,8 +172,11 @@ animations = [{
 radius = 12.0
 height = 36.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_12x15"]
+radius = 22.0227
+
 [node name="ennemi_champignon" type="CharacterBody2D"]
-script = ExtResource("1_u6mep")
+script = ExtResource("1_pcuv2")
 
 [node name="champignon_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
@@ -177,3 +185,30 @@ animation = &"attaque"
 
 [node name="champignon_collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_80v78")
+
+[node name="champi_atk_area" type="Area2D" parent="."]
+
+[node name="champi_atk_colli" type="CollisionShape2D" parent="champi_atk_area"]
+shape = SubResource("CircleShape2D_12x15")
+
+[node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]
+script = ExtResource("4_7hcqf")
+etat_actuel = NodePath("rien")
+
+[node name="rien" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("6_n6mhj")
+acteur = NodePath("../..")
+
+[node name="droite" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("7_uawmp")
+acteur = NodePath("../..")
+
+[node name="gauche" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("8_vwta0")
+acteur = NodePath("../..")
+
+[node name="attaquer" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("9_8rjxq")
+acteur = NodePath("../..")
+
+[connection signal="body_entered" from="champi_atk_area" to="machine_etat/rien" method="_on_champi_atk_area_body_entered"]

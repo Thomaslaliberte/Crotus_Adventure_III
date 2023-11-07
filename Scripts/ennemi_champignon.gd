@@ -22,6 +22,12 @@ func move_right():
 	$champignon_anim.play("courir")
 	$champignon_anim.flip_h = false
 
+func attaque():
+	velocity.x = 0
+	$champignon_anim.play("attaque")
+	await $champignon_anim.animation_finished
+	
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -45,3 +51,10 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
 	move_and_slide()
+
+
+func _on_champi_atk_area_body_entered(body):
+	if body.is_in_group("joueur"):
+		if body.global_position.x < global_position.x:
+			$champignon_anim.flip_h
+		attaque()
