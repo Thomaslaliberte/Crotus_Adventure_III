@@ -4,7 +4,6 @@ extends "res://Scripts/etats_crotus/etat.gd"
 @export var acteur: CharacterBody2D
 
 func Initialisation():
-	print("saut")
 	acteur.velocity.y += acteur.jump_speed
 	acteur.get_child(0).play("crotus_en_air")
 	

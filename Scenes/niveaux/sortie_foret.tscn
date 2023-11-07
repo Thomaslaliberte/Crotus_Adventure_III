@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0vy7sawl8agc"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_foret/Sortie_foret.gd" id="1_ms31f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wycps"]
+size = Vector2(20, 157)
+
+[node name="Sortie_foret" type="Area2D"]
+script = ExtResource("1_ms31f")
+
+[node name="sortie_foret_colli" type="CollisionShape2D" parent="."]
+position = Vector2(0, 68.5)
+shape = SubResource("RectangleShape2D_wycps")

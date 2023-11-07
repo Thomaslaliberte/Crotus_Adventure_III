@@ -18,12 +18,11 @@ func Process(_delta):
 	else:
 		acteur.velocity.x = -1.5*acteur.run_speed
 	
-	print(temps)
+
 	if acteur.is_on_wall():
 		temps = 50
 
 	if temps >= 50:
-		print(acteur.lever)
 		if !acteur.lever:
 			temps = 49
 		else:	

@@ -7,7 +7,6 @@ func Initialisation():
 	acteur.velocity.y = 0
 	acteur.velocity.y += acteur.jump_speed
 	acteur.saut_x2 = 2
-	print(acteur.saut_x2)
 	
 	acteur.get_child(0).play("crotus_rolade")
 	

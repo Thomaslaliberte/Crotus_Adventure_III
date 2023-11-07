@@ -4,8 +4,7 @@ extends "res://Scripts/etats_crotus/etat.gd"
 @export var acteur: CharacterBody2D
 
 func Initialisation():
-	print("course")
-
+	pass
 	
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
@@ -18,6 +17,7 @@ func Process(_delta):
 	var droite_fin: bool = Input.is_action_just_released("droite")
 	var gauche_fin: bool = Input.is_action_just_released("gauche")
 	var glissade = Input.is_action_just_pressed("glissade")
+	var acroupie: bool = Input.is_action_just_pressed("bas")
 	
 	if droite:
 		acteur.velocity.x = acteur.run_speed
@@ -43,4 +43,7 @@ func Process(_delta):
 			etat_change.emit("rien")
 		else:
 			etat_change.emit("en_air")
-
+			
+	if acroupie:
+		if acteur.is_on_floor():
+			etat_change.emit("acroupie")

@@ -4,9 +4,8 @@ extends "res://Scripts/etats_crotus/etat.gd"
  
 # Called when the node enters the scene tree for the first time.
 func Initialisation():
-	print("acroupie")
 	acteur.get_child(0).play("crotus_crouch_debut")
-
+	acteur.velocity.x = 0
  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process(_delta):
@@ -18,7 +17,7 @@ func Process(_delta):
 	var bas : bool = Input.is_action_pressed("bas")
 	if bas:
 		if droite or gauche:
-			etat_change.emit("deplacer_acroupie")
+			etat_change.emit("marche_acroupie")
 		if sauter:
 			etat_change.emit("sauter")
 	else:

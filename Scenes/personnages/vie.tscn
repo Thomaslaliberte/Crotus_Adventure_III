@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv832gr8xj7hk"]
+
+[ext_resource type="Script" path="res://Scripts/interface/vie.gd" id="1_5clhl"]
+[ext_resource type="Texture2D" uid="uid://c4162i11c2ukn" path="res://Assets/Mystic RPG icon pack/Sprites/200%/Gui_0.png" id="2_245fj"]
+
+[node name="vie" type="Node"]
+script = ExtResource("1_5clhl")
+
+[node name="coeur1" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("2_245fj")
+
+[node name="coeur2" type="Sprite2D" parent="."]
+position = Vector2(42, 16)
+texture = ExtResource("2_245fj")
+
+[node name="coeur3" type="Sprite2D" parent="."]
+position = Vector2(68, 16)
+texture = ExtResource("2_245fj")
+
+[node name="coeur4" type="Sprite2D" parent="."]
+position = Vector2(94, 16)
+texture = ExtResource("2_245fj")
+
+[node name="coeur5" type="Sprite2D" parent="."]
+position = Vector2(120, 16)
+texture = ExtResource("2_245fj")
