@@ -19,6 +19,7 @@ func Process(_delta):
 	var droite: bool = Input.is_action_pressed("droite")
 	var gauche: bool = Input.is_action_pressed("gauche")
 	var glissade = Input.is_action_just_pressed("glissade")
+	var acroupie: bool = Input.is_action_just_pressed("bas")
 	
 	if acteur.is_on_floor() == false:
 		etat_change.emit("en_air")
@@ -32,3 +33,6 @@ func Process(_delta):
 	if acteur.glissade == true:
 		if glissade:
 			etat_change.emit("glissade")
+	if acroupie:
+		if acteur.is_on_floor():
+			etat_change.emit("acroupie")

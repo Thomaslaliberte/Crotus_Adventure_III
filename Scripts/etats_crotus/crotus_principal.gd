@@ -18,5 +18,5 @@ func _physics_process(_delta):
 	if is_on_floor():
 		if saut_x2 == 2:
 			saut_x2 = 1
-			
+		
 	move_and_slide()
