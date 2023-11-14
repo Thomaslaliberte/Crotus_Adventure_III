@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cdfq35481214f"]
+[gd_scene load_steps=36 format=3 uid="uid://cdfq35481214f"]
 
 [ext_resource type="Texture2D" uid="uid://bhjhjo32ocv85" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Attack.png" id="1_ihuil"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/ennemi_champignon.gd" id="1_pcuv2"]
@@ -117,9 +117,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n4w6j")
 }],
-"loop": true,
+"loop": false,
 "name": &"attaque",
-"speed": 6.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -175,18 +175,29 @@ height = 36.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_12x15"]
 radius = 22.0227
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7anp"]
+size = Vector2(18, 34)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dbnjq"]
+radius = 12.0
+height = 42.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi66q"]
+size = Vector2(20, 34)
+
 [node name="ennemi_champignon" type="CharacterBody2D"]
 script = ExtResource("1_pcuv2")
 
 [node name="champignon_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_4byw1")
-animation = &"attaque"
+animation = &"idle"
 
 [node name="champignon_collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_80v78")
 
 [node name="champi_atk_area" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="champi_atk_colli" type="CollisionShape2D" parent="champi_atk_area"]
 shape = SubResource("CircleShape2D_12x15")
@@ -211,4 +222,25 @@ acteur = NodePath("../..")
 script = ExtResource("9_8rjxq")
 acteur = NodePath("../..")
 
+[node name="champi_area_atk_droite" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="champi_colli_atk_droite" type="CollisionShape2D" parent="champi_area_atk_droite"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_b7anp")
+disabled = true
+
+[node name="chami_area" type="Area2D" parent="."]
+
+[node name="champi_area_zone" type="CollisionShape2D" parent="chami_area"]
+shape = SubResource("CapsuleShape2D_dbnjq")
+
+[node name="champi_area_atk_gauche" type="Area2D" parent="."]
+
+[node name="champi_colli_atk_gauche" type="CollisionShape2D" parent="champi_area_atk_gauche"]
+position = Vector2(-14, 0)
+shape = SubResource("RectangleShape2D_bi66q")
+disabled = true
+
 [connection signal="body_entered" from="champi_atk_area" to="machine_etat/rien" method="_on_champi_atk_area_body_entered"]
+[connection signal="area_entered" from="chami_area" to="." method="_on_chami_area_area_entered"]
