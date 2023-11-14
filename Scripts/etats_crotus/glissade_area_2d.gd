@@ -13,4 +13,5 @@ func _process(delta):
 		if body.is_in_group("joueur"):
 			
 			get_parent().get_node("crotus_body").lever = false
+		
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bpo4in3r31naa"]
+[gd_scene load_steps=93 format=3 uid="uid://bpo4in3r31naa"]
 
 [ext_resource type="Script" path="res://Scripts/etats_crotus/crotus_principal.gd" id="1_7awpa"]
 [ext_resource type="Texture2D" uid="uid://bqj4b7jyxmvd4" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Run.png" id="1_sljnc"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Scripts/etats_crotus/acroupie.gd" id="23_ikscw"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/marche_accroupie.gd" id="25_2chou"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/attaque.gd" id="26_vdux6"]
+[ext_resource type="Script" path="res://Scripts/etats_crotus/degat.gd" id="27_mjecu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf842"]
 atlas = ExtResource("2_2brn5")
@@ -598,6 +599,7 @@ script = ExtResource("26_vdux6")
 acteur = NodePath("../..")
 
 [node name="degat" type="Node" parent="machine_etat"]
+script = ExtResource("27_mjecu")
 
 [node name="attaque_gauche_zone" type="Area2D" parent="." groups=["attaque_crotus"]]
 position = Vector2(37, 1)

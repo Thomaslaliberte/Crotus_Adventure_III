@@ -2,9 +2,13 @@ extends "res://Scripts/etats_crotus/etat.gd"
 
 
 @export var acteur: CharacterBody2D
-var temps = 0
+var timer = Timer.new()
+
 func Initialisation():
-	temps = 0
+	timer.set_wait_time(0.8) 
+	timer.one_shot = true
+	self.add_child(timer)
+	timer.start()
 	acteur.get_child(0).play("crotus_slide")
 	
 	acteur.get_child(2).set_deferred("disabled", false)
@@ -20,12 +24,9 @@ func Process(_delta):
 	
 
 	if acteur.is_on_wall():
-		temps = 50
+		timer.stop()
 
-	if temps >= 50:
-		if !acteur.lever:
-			temps = 49
-		else:	
-			etat_change.emit("rien")
-	temps += 1
+	if timer.is_stopped() and acteur.lever == true:
+		remove_child(timer)
+		etat_change.emit("rien")
 	acteur.lever = true
