@@ -15,6 +15,7 @@ func Process(_delta):
 	var droite: bool = Input.is_action_pressed("droite")
 	var gauche: bool = Input.is_action_pressed("gauche")
 	var bas : bool = Input.is_action_pressed("bas")
+	var attaque: bool = Input.is_action_just_pressed("attaque")
 	if bas:
 		if droite or gauche:
 			etat_change.emit("marche_acroupie")
@@ -22,3 +23,5 @@ func Process(_delta):
 			etat_change.emit("sauter")
 	else:
 		etat_change.emit("rien")
+	if attaque:
+		etat_change.emit("attaque")

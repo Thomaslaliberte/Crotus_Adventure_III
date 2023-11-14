@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://bpo4in3r31naa"]
+[gd_scene load_steps=92 format=3 uid="uid://bpo4in3r31naa"]
 
 [ext_resource type="Script" path="res://Scripts/etats_crotus/crotus_principal.gd" id="1_7awpa"]
 [ext_resource type="Texture2D" uid="uid://bqj4b7jyxmvd4" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Run.png" id="1_sljnc"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/etats_crotus/saut_x2.gd" id="20_x4jx8"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/acroupie.gd" id="23_ikscw"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/marche_accroupie.gd" id="25_2chou"]
+[ext_resource type="Script" path="res://Scripts/etats_crotus/attaque.gd" id="26_vdux6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf842"]
 atlas = ExtResource("2_2brn5")
@@ -287,7 +288,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"crotus_atk_01",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -532,13 +533,16 @@ height = 44.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uc8gs"]
 size = Vector2(33, 18.3)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_am1fs"]
+radius = 21.2132
+
 [node name="crotus_body" type="CharacterBody2D" groups=["joueur"]]
 script = ExtResource("1_7awpa")
 
 [node name="crotus_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -18)
 sprite_frames = SubResource("SpriteFrames_p5346")
-animation = &"crotus_atk_01"
+animation = &"crotus_rien"
 
 [node name="crotus_coli" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t0obn")
@@ -551,7 +555,6 @@ disabled = true
 [node name="Camera2D" type="Camera2D" parent="." groups=["joueur"]]
 zoom = Vector2(2.5, 2.5)
 limit_left = -10
-position_smoothing_enabled = true
 drag_horizontal_enabled = true
 
 [node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]
@@ -590,4 +593,22 @@ acteur = NodePath("../..")
 script = ExtResource("25_2chou")
 acteur = NodePath("../..")
 
-[node name="attaque" type="Node" parent="machine_etat"]
+[node name="attaque" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("26_vdux6")
+acteur = NodePath("../..")
+
+[node name="degat" type="Node" parent="machine_etat"]
+
+[node name="attaque_gauche_zone" type="Area2D" parent="." groups=["attaque_crotus"]]
+position = Vector2(37, 1)
+
+[node name="attaque_gauche_colli" type="CollisionShape2D" parent="attaque_gauche_zone"]
+shape = SubResource("CircleShape2D_am1fs")
+disabled = true
+
+[node name="attaque_droite_zone" type="Area2D" parent="." groups=["attaque_crotus"]]
+
+[node name="attaque_droite_colli" type="CollisionShape2D" parent="attaque_droite_zone"]
+position = Vector2(-38, 2)
+shape = SubResource("CircleShape2D_am1fs")
+disabled = true

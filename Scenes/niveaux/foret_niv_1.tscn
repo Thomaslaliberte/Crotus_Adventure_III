@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://br2jwcmc5t46n"]
+[gd_scene load_steps=8 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
 [ext_resource type="Script" path="res://Scripts/camera_foret.gd" id="1_q4gs5"]

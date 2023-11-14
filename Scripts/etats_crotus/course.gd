@@ -18,6 +18,7 @@ func Process(_delta):
 	var gauche_fin: bool = Input.is_action_just_released("gauche")
 	var glissade = Input.is_action_just_pressed("glissade")
 	var acroupie: bool = Input.is_action_just_pressed("bas")
+	var attaque: bool = Input.is_action_just_pressed("attaque")
 	
 	if droite:
 		acteur.velocity.x = acteur.run_speed
@@ -47,3 +48,5 @@ func Process(_delta):
 	if acroupie:
 		if acteur.is_on_floor():
 			etat_change.emit("acroupie")
+	if attaque:
+		etat_change.emit("attaque")

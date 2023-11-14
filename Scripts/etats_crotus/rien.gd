@@ -4,9 +4,9 @@ extends "res://Scripts/etats_crotus/etat.gd"
 @export var acteur: CharacterBody2D
 
 func Initialisation():
-	
-	acteur.get_child(0).play("crotus_rien")
-	acteur.velocity.x = 0
+	if acteur.is_on_floor():
+		acteur.get_child(0).play("crotus_rien")
+		acteur.velocity.x = 0
 	
 	acteur.get_child(2).set_deferred("disabled", true)
 	acteur.get_child(1).set_deferred("disabled", false)
@@ -18,7 +18,8 @@ func Process(_delta):
 	var droite: bool = Input.is_action_pressed("droite")
 	var gauche: bool = Input.is_action_pressed("gauche")
 	var glissade = Input.is_action_just_pressed("glissade")
-	var acroupie: bool = Input.is_action_just_pressed("bas")
+	var acroupie: bool = Input.is_action_pressed("bas")
+	var attaque: bool = Input.is_action_just_pressed("attaque")
 	
 	if acteur.is_on_floor() == false:
 		etat_change.emit("en_air")
@@ -35,3 +36,5 @@ func Process(_delta):
 	if acroupie:
 		if acteur.is_on_floor():
 			etat_change.emit("acroupie")
+	if attaque:
+		etat_change.emit("attaque")

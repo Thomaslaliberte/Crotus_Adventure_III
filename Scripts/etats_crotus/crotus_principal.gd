@@ -26,5 +26,3 @@ func _physics_process(_delta):
 		vielle_vie = vie
 		vie_change.emit(vie)
 	move_and_slide()
-
-
