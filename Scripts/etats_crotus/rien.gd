@@ -38,3 +38,9 @@ func Process(_delta):
 			etat_change.emit("acroupie")
 	if attaque:
 		etat_change.emit("attaque")
+	
+	
+
+
+func _on_crotus_body_degat_crotus():
+	etat_change.emit("degat")

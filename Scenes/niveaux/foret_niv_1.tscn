@@ -15,7 +15,7 @@ script = ExtResource("1_q4gs5")
 script = null
 
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
-position = Vector2(2501, 409)
+position = Vector2(2515, 388)
 
 [node name="crotus_body" parent="." instance=ExtResource("4_0kwbg")]
 position = Vector2(2636, 389)
@@ -29,7 +29,7 @@ floor_snap_length = 10.0
 position = Vector2(2747, 408)
 
 [node name="glissade_area2d2" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(2723, 408)
+position = Vector2(2726, 408)
 
 [node name="glissade_area2d3" parent="." instance=ExtResource("4_nfqdj")]
 position = Vector2(2795, 408)
@@ -41,7 +41,7 @@ position = Vector2(2771, 408)
 position = Vector2(3277, 408)
 
 [node name="glissade_area2d6" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(3253, 420)
+position = Vector2(3255, 420)
 
 [node name="glissade_area2d7" parent="." instance=ExtResource("4_nfqdj")]
 position = Vector2(3301, 408)
@@ -51,5 +51,3 @@ position = Vector2(3325, 408)
 
 [node name="Sortie_foret" parent="." instance=ExtResource("6_1e0vt")]
 position = Vector2(3353, 321)
-
-[connection signal="vie_change" from="crotus_body" to="crotus_body/interface_canvaslayer/vie" method="_on_crotus_body_vie_change"]

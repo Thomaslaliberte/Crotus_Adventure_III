@@ -24,3 +24,7 @@ func Process(_delta):
 	if acteur.is_on_floor():
 		etat_change.emit("rien")
 
+
+
+func _on_crotus_body_degat_crotus():
+	etat_change.emit("degat")

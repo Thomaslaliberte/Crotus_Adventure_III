@@ -47,3 +47,8 @@ func Process(_delta):
 			etat_change.emit("attaque")
 	else:
 		etat_change.emit("rien")
+
+
+func _on_crotus_body_degat_crotus():
+	etat_change.emit("degat")
+

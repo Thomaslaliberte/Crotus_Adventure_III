@@ -601,39 +601,24 @@ acteur = NodePath("../..")
 script = ExtResource("26_vdux6")
 acteur = NodePath("../..")
 
-[node name="degat" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+[node name="degat" type="Node" parent="machine_etat"]
 script = ExtResource("27_mjecu")
-acteur = NodePath("../..")
 
 [node name="attaque_gauche_zone" type="Area2D" parent="." groups=["attaque_crotus"]]
 position = Vector2(37, 1)
 
-[node name="attaque_gauche_colli" type="CollisionShape2D" parent="attaque_gauche_zone" groups=["attaque_crotus"]]
+[node name="attaque_gauche_colli" type="CollisionShape2D" parent="attaque_gauche_zone"]
 shape = SubResource("CircleShape2D_am1fs")
 disabled = true
 
 [node name="attaque_droite_zone" type="Area2D" parent="." groups=["attaque_crotus"]]
 
-[node name="attaque_droite_colli" type="CollisionShape2D" parent="attaque_droite_zone" groups=["attaque_crotus"]]
+[node name="attaque_droite_colli" type="CollisionShape2D" parent="attaque_droite_zone"]
 position = Vector2(-38, 2)
 shape = SubResource("CircleShape2D_am1fs")
 disabled = true
 
 [node name="detection_attaque" type="Area2D" parent="."]
-collision_layer = 15
-collision_mask = 15
 
 [node name="detection_attaque_zone" type="CollisionShape2D" parent="detection_attaque"]
 shape = SubResource("CapsuleShape2D_bplao")
-
-[connection signal="degat_crotus" from="." to="machine_etat/rien" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/saut" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/course" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/en_air" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/glissade" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/saut_x2" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/acroupie" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/marche_acroupie" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/attaque" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/degat" method="_on_crotus_body_degat_crotus"]
-[connection signal="area_entered" from="detection_attaque" to="." method="_on_detection_attaque_area_entered"]

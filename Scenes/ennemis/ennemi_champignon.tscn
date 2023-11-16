@@ -222,8 +222,7 @@ acteur = NodePath("../..")
 script = ExtResource("9_8rjxq")
 acteur = NodePath("../..")
 
-[node name="champi_area_atk_droite" type="Area2D" parent="."]
-collision_layer = 0
+[node name="champi_area_atk_droite" type="Area2D" parent="." groups=["attaque_ennemie"]]
 
 [node name="champi_colli_atk_droite" type="CollisionShape2D" parent="champi_area_atk_droite"]
 position = Vector2(15, 0)
@@ -235,7 +234,7 @@ disabled = true
 [node name="champi_area_zone" type="CollisionShape2D" parent="chami_area"]
 shape = SubResource("CapsuleShape2D_dbnjq")
 
-[node name="champi_area_atk_gauche" type="Area2D" parent="."]
+[node name="champi_area_atk_gauche" type="Area2D" parent="." groups=["attaque_ennemie"]]
 
 [node name="champi_colli_atk_gauche" type="CollisionShape2D" parent="champi_area_atk_gauche"]
 position = Vector2(-14, 0)

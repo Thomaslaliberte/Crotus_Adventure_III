@@ -20,3 +20,7 @@ func Process(_delta):
 		acteur.get_node("attaque_droite_zone").get_child(0).disabled = true
 		acteur.get_node("attaque_gauche_zone").get_child(0).disabled = true
 		etat_change.emit("rien")
+
+
+func _on_crotus_body_degat_crotus():
+	etat_change.emit("degat")
