@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c5imn10j8wbae" path="res://Scenes/niveaux/glissade_area_2d.tscn" id="4_nfqdj"]
 [ext_resource type="PackedScene" uid="uid://d0vy7sawl8agc" path="res://Scenes/niveaux/sortie_foret.tscn" id="6_1e0vt"]
 
-[node name="Node2D" type="Node2D"]
+[node name="foret_niv_1" type="Node2D"]
 script = ExtResource("1_q4gs5")
 
 [node name="foret_base" parent="." instance=ExtResource("1_dgxfq")]

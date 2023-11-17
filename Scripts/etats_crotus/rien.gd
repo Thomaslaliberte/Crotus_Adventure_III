@@ -44,3 +44,7 @@ func Process(_delta):
 
 func _on_crotus_body_degat_crotus():
 	etat_change.emit("degat")
+
+
+func _on_crotus_body_mort():
+	etat_change.emit("mort")

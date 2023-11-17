@@ -27,3 +27,7 @@ func _on_crotus_body_degat_crotus(area):
 	
 	
 	
+
+
+func _on_crotus_body_mort():
+	etat_change.emit("mort")
