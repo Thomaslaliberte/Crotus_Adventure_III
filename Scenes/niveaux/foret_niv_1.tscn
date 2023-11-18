@@ -1,35 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://br2jwcmc5t46n"]
+[gd_scene load_steps=6 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
-[ext_resource type="Script" path="res://Scripts/camera_foret.gd" id="1_q4gs5"]
+[ext_resource type="Script" path="res://Scripts/niveau_foret/foret_niv_1.gd" id="1_j3lh1"]
 [ext_resource type="PackedScene" uid="uid://bgm4vvo3mcxct" path="res://Scenes/objets/bottletscn.tscn" id="3_b35xr"]
-[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="4_0kwbg"]
-[ext_resource type="PackedScene" uid="uid://bv832gr8xj7hk" path="res://Scenes/personnages/vie.tscn" id="4_gde6c"]
 [ext_resource type="PackedScene" uid="uid://c5imn10j8wbae" path="res://Scenes/niveaux/glissade_area_2d.tscn" id="4_nfqdj"]
 [ext_resource type="PackedScene" uid="uid://d0vy7sawl8agc" path="res://Scenes/niveaux/sortie_foret.tscn" id="6_1e0vt"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_q4gs5")
+[node name="foret_niv_1" type="Node2D"]
+script = ExtResource("1_j3lh1")
 
 [node name="foret_base" parent="." instance=ExtResource("1_dgxfq")]
 script = null
 
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
-position = Vector2(2501, 409)
-
-[node name="crotus_body" parent="." instance=ExtResource("4_0kwbg")]
-position = Vector2(2636, 389)
-floor_snap_length = 10.0
-
-[node name="interface_canvaslayer" type="CanvasLayer" parent="crotus_body"]
-
-[node name="vie" parent="crotus_body/interface_canvaslayer" instance=ExtResource("4_gde6c")]
+position = Vector2(2493, 403)
 
 [node name="glissade_area2d" parent="." instance=ExtResource("4_nfqdj")]
 position = Vector2(2747, 408)
 
 [node name="glissade_area2d2" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(2723, 408)
+position = Vector2(2726, 408)
 
 [node name="glissade_area2d3" parent="." instance=ExtResource("4_nfqdj")]
 position = Vector2(2795, 408)
@@ -41,7 +31,7 @@ position = Vector2(2771, 408)
 position = Vector2(3277, 408)
 
 [node name="glissade_area2d6" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(3253, 420)
+position = Vector2(3255, 420)
 
 [node name="glissade_area2d7" parent="." instance=ExtResource("4_nfqdj")]
 position = Vector2(3301, 408)
@@ -49,7 +39,14 @@ position = Vector2(3301, 408)
 [node name="glissade_area2d8" parent="." instance=ExtResource("4_nfqdj")]
 position = Vector2(3325, 408)
 
-[node name="Sortie_foret" parent="." instance=ExtResource("6_1e0vt")]
+[node name="sortie_foret" parent="." instance=ExtResource("6_1e0vt")]
 position = Vector2(3353, 321)
 
-[connection signal="vie_change" from="crotus_body" to="crotus_body/interface_canvaslayer/vie" method="_on_crotus_body_vie_change"]
+[connection signal="lever" from="glissade_area2d" to="." method="_on_glissade_area_2d_lever"]
+[connection signal="lever" from="glissade_area2d2" to="." method="_on_glissade_area_2d_2_lever"]
+[connection signal="lever" from="glissade_area2d3" to="." method="_on_glissade_area_2d_3_lever"]
+[connection signal="lever" from="glissade_area2d4" to="." method="_on_glissade_area_2d_4_lever"]
+[connection signal="lever" from="glissade_area2d5" to="." method="_on_glissade_area_2d_5_lever"]
+[connection signal="lever" from="glissade_area2d6" to="." method="_on_glissade_area_2d_6_lever"]
+[connection signal="lever" from="glissade_area2d7" to="." method="_on_glissade_area_2d_7_lever"]
+[connection signal="lever" from="glissade_area2d8" to="." method="_on_glissade_area_2d_8_lever"]

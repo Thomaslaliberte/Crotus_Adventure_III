@@ -21,13 +21,14 @@ func _ready():
 func _process(delta):
 	pass
 	
-	
 
-func _on_crotus_body_vie_change(vie):
+
+func _on_crotus_body_changer_vie(vie):
+	print(vie)
 	var temp = 0
 	while temp < vie:
 		get_child(temp).set_visible(true) 
 		temp += 1
 	while temp < 5:
 		get_child(temp).set_visible(false) 
-		temp +=1 # Replace with function body.
+		temp +=1 # Replace with function body.	

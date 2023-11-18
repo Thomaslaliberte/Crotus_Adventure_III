@@ -30,3 +30,11 @@ func Process(_delta):
 		remove_child(timer)
 		etat_change.emit("rien")
 	acteur.lever = true
+
+
+func _on_crotus_body_degat_crotus(area):
+	etat_change.emit("degat")
+
+
+func _on_crotus_body_mort():
+	etat_change.emit("mort")

@@ -6,8 +6,6 @@ var choix = 1
 var rng = RandomNumberGenerator.new()
 
 func Initialisation():
-	acteur.get_node("champi_area_atk_gauche").get_node("champi_colli_atk_gauche").disabled = true
-	acteur.get_node("champi_area_atk_droite").get_node("champi_colli_atk_droite").disabled = true
 	acteur.timer.stop()
 	if acteur.timer.is_stopped():
 		acteur.get_child(0).play("idle")

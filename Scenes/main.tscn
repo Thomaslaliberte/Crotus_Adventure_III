@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfb2rdp3tgj18"]
+[gd_scene load_steps=4 format=3 uid="uid://bfb2rdp3tgj18"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_lvsgx"]
+[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="2_4iy51"]
+[ext_resource type="PackedScene" uid="uid://bv832gr8xj7hk" path="res://Scenes/personnages/vie.tscn" id="3_udgmn"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_lvsgx")
+
+[node name="crotus_body" parent="." instance=ExtResource("2_4iy51")]
+z_index = 1
+position = Vector2(70, 532)
+
+[node name="interface_canvasLayer" type="CanvasLayer" parent="crotus_body"]
+
+[node name="vie" parent="crotus_body/interface_canvasLayer" instance=ExtResource("3_udgmn")]
+
+[connection signal="cacher_bouteille" from="." to="crotus_body" method="_on_main_cacher_bouteille"]
+[connection signal="empecher_lever" from="." to="crotus_body" method="_on_main_empecher_lever"]
+[connection signal="glissade_crotus" from="." to="crotus_body" method="_on_main_glissade_crotus"]
+[connection signal="changer_vie" from="crotus_body" to="crotus_body/interface_canvasLayer/vie" method="_on_crotus_body_changer_vie"]
+[connection signal="degat_crotus" from="crotus_body" to="crotus_body/interface_canvasLayer/vie" method="_on_crotus_body_degat_crotus"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://bpo4in3r31naa"]
+[gd_scene load_steps=94 format=3 uid="uid://bpo4in3r31naa"]
 
 [ext_resource type="Script" path="res://Scripts/etats_crotus/crotus_principal.gd" id="1_7awpa"]
 [ext_resource type="Texture2D" uid="uid://bqj4b7jyxmvd4" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Run.png" id="1_sljnc"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://djbeyum3a5njr" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_CrouchTransition.png" id="7_q2pt2"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/machine_etat.gd" id="11_jdaog"]
 [ext_resource type="Texture2D" uid="uid://dber84ivi1krv" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Roll.png" id="11_m2jn0"]
-[ext_resource type="Texture2D" uid="uid://d2bfdulmv2ag" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_DeathNoMovement.png" id="11_scvw8"]
 [ext_resource type="Texture2D" uid="uid://menelj8y84wy" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Fall.png" id="12_i6u14"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/rien.gd" id="12_on6ha"]
 [ext_resource type="Texture2D" uid="uid://dpnjob5g28hop" path="res://Assets/Colour2/Outline/120x80_PNGSheets/_Slide.png" id="12_p25pf"]
@@ -28,7 +27,6 @@
 [ext_resource type="Script" path="res://Scripts/etats_crotus/marche_accroupie.gd" id="25_2chou"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/attaque.gd" id="26_vdux6"]
 [ext_resource type="Script" path="res://Scripts/etats_crotus/degat.gd" id="27_mjecu"]
-[ext_resource type="Script" path="res://Scripts/etats_crotus/Mort.gd" id="29_gdoy4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jf842"]
 atlas = ExtResource("2_2brn5")
@@ -181,46 +179,6 @@ region = Rect2(120, 0, 120, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdnax"]
 atlas = ExtResource("3_shx6k")
 region = Rect2(240, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3bfep"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(0, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8pmn"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(120, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjmx0"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(240, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnbrc"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(360, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dxjmm"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(480, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4kj21"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(600, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a2kpp"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(720, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2p43b"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(840, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4gif"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(960, 0, 120, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x68ou"]
-atlas = ExtResource("11_scvw8")
-region = Rect2(1080, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6vj5t"]
 atlas = ExtResource("2_kygse")
@@ -472,41 +430,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3bfep")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t8pmn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hjmx0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pnbrc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dxjmm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4kj21")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a2kpp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2p43b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i4gif")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x68ou")
-}],
-"loop": false,
-"name": &"crotus_mort",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_6vj5t")
 }, {
 "duration": 1.0,
@@ -617,18 +540,13 @@ radius = 21.2132
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bplao"]
 height = 44.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_384lq"]
-size = Vector2(60, 13)
-
 [node name="crotus_body" type="CharacterBody2D" groups=["joueur"]]
 script = ExtResource("1_7awpa")
 
 [node name="crotus_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -18)
 sprite_frames = SubResource("SpriteFrames_p5346")
-animation = &"crotus_mort"
-frame = 9
-frame_progress = 1.0
+animation = &"crotus_rien"
 
 [node name="crotus_coli" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_t0obn")
@@ -641,7 +559,6 @@ disabled = true
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 limit_left = -10
-limit_right = 3300
 drag_horizontal_enabled = true
 
 [node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]
@@ -684,58 +601,24 @@ acteur = NodePath("../..")
 script = ExtResource("26_vdux6")
 acteur = NodePath("../..")
 
-[node name="degat" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+[node name="degat" type="Node" parent="machine_etat"]
 script = ExtResource("27_mjecu")
-acteur = NodePath("../..")
-
-[node name="mort" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
-script = ExtResource("29_gdoy4")
-acteur = NodePath("../..")
 
 [node name="attaque_gauche_zone" type="Area2D" parent="." groups=["attaque_crotus"]]
 position = Vector2(37, 1)
 
-[node name="attaque_gauche_colli" type="CollisionShape2D" parent="attaque_gauche_zone" groups=["attaque_crotus"]]
+[node name="attaque_gauche_colli" type="CollisionShape2D" parent="attaque_gauche_zone"]
 shape = SubResource("CircleShape2D_am1fs")
 disabled = true
 
 [node name="attaque_droite_zone" type="Area2D" parent="." groups=["attaque_crotus"]]
 
-[node name="attaque_droite_colli" type="CollisionShape2D" parent="attaque_droite_zone" groups=["attaque_crotus"]]
+[node name="attaque_droite_colli" type="CollisionShape2D" parent="attaque_droite_zone"]
 position = Vector2(-38, 2)
 shape = SubResource("CircleShape2D_am1fs")
 disabled = true
 
 [node name="detection_attaque" type="Area2D" parent="."]
-collision_layer = 15
-collision_mask = 15
 
 [node name="detection_attaque_zone" type="CollisionShape2D" parent="detection_attaque"]
 shape = SubResource("CapsuleShape2D_bplao")
-
-[node name="crotus_colli_mort" type="CollisionShape2D" parent="."]
-position = Vector2(2, 15.5)
-shape = SubResource("RectangleShape2D_384lq")
-disabled = true
-
-[connection signal="degat_crotus" from="." to="machine_etat/rien" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/saut" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/course" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/en_air" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/glissade" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/saut_x2" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/acroupie" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/marche_acroupie" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/attaque" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/degat" method="_on_crotus_body_degat_crotus"]
-[connection signal="mort" from="." to="machine_etat/rien" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/saut" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/course" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/en_air" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/glissade" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/saut_x2" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/acroupie" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/marche_acroupie" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/attaque" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/degat" method="_on_crotus_body_mort"]
-[connection signal="area_entered" from="detection_attaque" to="." method="_on_detection_attaque_area_entered"]
