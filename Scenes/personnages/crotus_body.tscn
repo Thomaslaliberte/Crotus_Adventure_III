@@ -641,6 +641,7 @@ disabled = true
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 limit_left = -10
+limit_right = 3300
 drag_horizontal_enabled = true
 
 [node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]

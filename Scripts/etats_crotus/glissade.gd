@@ -32,7 +32,7 @@ func Process(_delta):
 	acteur.lever = true
 
 
-func _on_crotus_body_degat_crotus():
+func _on_crotus_body_degat_crotus(area):
 	etat_change.emit("degat")
 
 

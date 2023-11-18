@@ -10,11 +10,12 @@ func Initialisation():
 	timer.one_shot = true
 	timer.start()
 	acteur.get_child(0).play("crotus_saut_fin")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
-	if timer.is_stopped() or acteur.is_on_floor():
+	if timer.is_stopped() and acteur.is_on_floor():
 		etat_change.emit("rien")
 
 func _on_crotus_body_degat_crotus(area):

@@ -9,12 +9,12 @@ func Initialisation():
 	self.add_child(timer)
 	timer.one_shot = true
 	acteur.get_node('crotus_anim').play("crotus_mort")
-	if acteur.velocity.x != 0:
-		acteur.velocity.x = acteur.velocity.x/2
+	
 	timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process(_delta):
+	acteur.velocity.x = 0
 	acteur.get_node("crotus_colli_mort").set_deferred("disabled", false)
 	acteur.get_child(2).set_deferred("disabled", true)
 	acteur.get_child(1).set_deferred("disabled", true)

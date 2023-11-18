@@ -22,7 +22,7 @@ func Process(_delta):
 		etat_change.emit("rien")
 
 
-func _on_crotus_body_degat_crotus():
+func _on_crotus_body_degat_crotus(area):
 	etat_change.emit("degat")
 
 
