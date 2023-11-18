@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqha57ppv2to6"]
 
-[ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/mossy_entre.tscn" id="2_nfnrh"]
+[ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/niveaux/mossy_entre.tscn" id="2_nfnrh"]
 [ext_resource type="PackedScene" uid="uid://5iwxpo1xmo3i" path="res://Scenes/objets/coffre.tscn" id="3_dyfu3"]
 [ext_resource type="PackedScene" uid="uid://cl6gjqlxan551" path="res://Scenes/objets/feu.tscn" id="4_yheu6"]
 [ext_resource type="PackedScene" uid="uid://cdfq35481214f" path="res://Scenes/ennemis/ennemi_champignon.tscn" id="5_2epn8"]
