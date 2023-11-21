@@ -14,7 +14,5 @@ func _process(delta):
 
 
 
-
-func _on_main_cacher_bouteille():
+func _on_foret_niv_1_cacher():
 	queue_free()
-

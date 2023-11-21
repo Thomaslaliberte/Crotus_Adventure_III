@@ -2,7 +2,6 @@ extends Node
 
 signal glissade_crotus
 signal empecher_lever
-signal cacher_bouteille
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -48,7 +47,10 @@ func _on_sortie_mousse_sortie():
 	get_child(0).position.y = 423
 	if get_child(1).get_node('sortie_foret'):
 		get_child(1).get_node('sortie_foret').sortie_foret.connect(_on_sortie_foret_sortie)
-	cacher_bouteille.emit()
+	get_child(1).chacher_bouteille = true
+	if get_child(1):
+		get_child(1).envoyer_lever.connect(_empecher_lever_crotus)
+	
 	
 func _fin():
 	print('fin')

@@ -1,14 +1,17 @@
 extends Node2D
 
 signal envoyer_lever
+signal cacher
+var chacher_bouteille = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if chacher_bouteille == true:
+		cacher.emit()
+		chacher_bouteille = true
 
 
 func _on_glissade_area_2d_lever():

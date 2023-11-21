@@ -24,7 +24,6 @@ func _process(delta):
 
 
 func _on_crotus_body_changer_vie(vie):
-	print(vie)
 	var temp = 0
 	while temp < vie:
 		get_child(temp).set_visible(true) 

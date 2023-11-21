@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_coxqr"]
 size = Vector2(43, 43)
 
-[node name="bottle_area_2d" type="Area2D" groups=["objet_col"]]
+[node name="bottle_area_2d" type="Area2D"]
 script = ExtResource("1_aqdxq")
 
 [node name="bottle_sprite_2d" type="Sprite2D" parent="."]

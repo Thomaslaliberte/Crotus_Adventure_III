@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqha57ppv2to6"]
+[gd_scene load_steps=8 format=3 uid="uid://cqha57ppv2to6"]
 
 [ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/niveaux/mossy_entre.tscn" id="2_nfnrh"]
 [ext_resource type="PackedScene" uid="uid://5iwxpo1xmo3i" path="res://Scenes/objets/coffre.tscn" id="3_dyfu3"]
 [ext_resource type="PackedScene" uid="uid://cl6gjqlxan551" path="res://Scenes/objets/feu.tscn" id="4_yheu6"]
 [ext_resource type="PackedScene" uid="uid://cdfq35481214f" path="res://Scenes/ennemis/ennemi_champignon.tscn" id="5_2epn8"]
 [ext_resource type="PackedScene" uid="uid://dtyeib5gkd43u" path="res://Scenes/niveaux/sortie_mousse.tscn" id="6_1gma8"]
+[ext_resource type="AudioStream" uid="uid://bdy6nxlplepku" path="res://Assets/Musique/Ambient 1.mp3" id="6_psuvr"]
+[ext_resource type="AudioStream" uid="uid://bsxrxcftafjn1" path="res://Assets/Musique/Light Ambient 4 (Loop).mp3" id="6_ss1ac"]
 
 [node name="mossy_niv_1" type="Node2D"]
 
@@ -27,3 +29,15 @@ position = Vector2(813, 589)
 
 [node name="sortie_mousse" parent="." instance=ExtResource("6_1gma8")]
 position = Vector2(-35, 71)
+
+[node name="boite_de_musique_bas" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(585, 1670)
+stream = ExtResource("6_ss1ac")
+autoplay = true
+max_distance = 950.0
+
+[node name="boite_de_musique_haut" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(568, 0)
+stream = ExtResource("6_psuvr")
+autoplay = true
+max_distance = 950.0
