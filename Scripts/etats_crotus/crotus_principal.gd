@@ -35,15 +35,13 @@ func _perdre_vie():
 	
 
 func _on_detection_attaque_area_entered(area):
+	print(area)
 	if area.is_in_group("attaque_ennemie"):
 		_perdre_vie()
 		if vie <= 0:
 			mort.emit()
 		else:
 			degat_crotus.emit(area)
-		
-
-
 
 func _on_main_glissade_crotus():
 	glissade = true

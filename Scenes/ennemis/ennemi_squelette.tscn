@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://1rhv8ga4dg75"]
+[gd_scene load_steps=44 format=3 uid="uid://1rhv8ga4dg75"]
 
 [ext_resource type="Texture2D" uid="uid://yogpmef8puwn" path="res://Assets/Monsters_Creatures_Fantasy/Skeleton/Attack.png" id="1_6ygbe"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/ennemi_squelette.gd" id="1_o5jgf"]
@@ -239,23 +239,22 @@ animations = [{
 radius = 16.0
 height = 36.0
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_bvoao"]
-a = Vector2(51, -1)
-b = Vector2(-56, -1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p43mx"]
+size = Vector2(112, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knls0"]
+size = Vector2(31, 9)
 
 [node name="squelette_body" type="CharacterBody2D"]
 script = ExtResource("1_o5jgf")
 
 [node name="squelette_anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4.76837e-07, 0)
+position = Vector2(4, 0)
 scale = Vector2(0.753333, 0.7)
 sprite_frames = SubResource("SpriteFrames_mdfy5")
-animation = &"squelette_attaque"
-frame = 7
-frame_progress = 1.0
+animation = &"squelette_courrir"
 
 [node name="squelette_coli" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_k17mw")
 
 [node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]
@@ -283,15 +282,24 @@ collision_layer = 0
 
 [node name="squelette_colli_attaque" type="CollisionShape2D" parent="squelette_area_attaque"]
 position = Vector2(0, 1)
-shape = SubResource("SegmentShape2D_bvoao")
+shape = SubResource("RectangleShape2D_p43mx")
 
-[node name="squelette_area_dmg" type="Area2D" parent="."]
-collision_layer = 0
+[node name="squelette_area_dmg" type="Area2D" parent="." groups=["attaque_ennemie"]]
 
 [node name="squelette_colli_dmg" type="CollisionPolygon2D" parent="squelette_area_dmg"]
 position = Vector2(-24, 1)
 polygon = PackedVector2Array(24, 16, 80, 16, 80, -16, 24, -16)
 disabled = true
+
+[node name="squelette_area_touche" type="Area2D" parent="." groups=["attaque_ennemie"]]
+
+[node name="squelette_colli_touche" type="CollisionShape2D" parent="squelette_area_touche"]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_knls0")
+
+[node name="tombe_pas" type="RayCast2D" parent="."]
+position = Vector2(16, 0)
+target_position = Vector2(0, 32)
 
 [connection signal="animation_finished" from="squelette_anim" to="machine_etat/attaque_epee" method="_on_squelette_anim_animation_finished"]
 [connection signal="body_entered" from="squelette_area_attaque" to="." method="_on_squelette_area_attaque_body_entered"]

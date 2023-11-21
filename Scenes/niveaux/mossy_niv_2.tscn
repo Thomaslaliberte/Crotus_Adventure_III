@@ -1,16 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://uhrcfht7s6wx"]
+[gd_scene load_steps=5 format=3 uid="uid://uhrcfht7s6wx"]
 
 [ext_resource type="PackedScene" uid="uid://dptaybmitd5cy" path="res://Scenes/niveaux/mossy_passage.tscn" id="1_8j80p"]
 [ext_resource type="PackedScene" uid="uid://1rhv8ga4dg75" path="res://Scenes/ennemis/ennemi_squelette.tscn" id="2_dxvxy"]
 [ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="3_1nmi1"]
+[ext_resource type="PackedScene" uid="uid://05nphpu2ckri" path="res://Scenes/ennemis/ennemi_goblin.tscn" id="4_furju"]
 
 [node name="mossy_niv_2" type="Node2D"]
 position = Vector2(9, -372)
 
 [node name="mossy_base" parent="." instance=ExtResource("1_8j80p")]
+position = Vector2(-8, 43)
 
 [node name="squelette_body" parent="." instance=ExtResource("2_dxvxy")]
-position = Vector2(431, 337)
+position = Vector2(431, 364)
 
 [node name="crotus_body" parent="." instance=ExtResource("3_1nmi1")]
-position = Vector2(386, 343)
+position = Vector2(367, 347)
+
+[node name="squelette_body3" parent="." instance=ExtResource("2_dxvxy")]
+position = Vector2(897, 149)
+
+[node name="squelette_body2" parent="." instance=ExtResource("2_dxvxy")]
+position = Vector2(733, 221)
+
+[node name="goblin_body" parent="." instance=ExtResource("4_furju")]
+position = Vector2(531, 771)

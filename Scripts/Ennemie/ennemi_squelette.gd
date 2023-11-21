@@ -9,27 +9,17 @@ func _ready():
 	self.add_child(timer)
 	timer.one_shot = true
 	timer.start()
+	
 		
 func _physics_process(_delta):
 	velocity.y += gravite * _delta
 	move_and_slide()
-
-
-func _degat_squelette(body):
-	print("va faire mall")
-	if body.is_in_group("joueur"):
-		await self.get_node("squelette_anim").animation_finished
-		self.get_node("squelette_area_dmg/squelette_colli_dmg").disabled = false
-		print("ouille")
-		self.get_node("squelette_area_dmg/squelette_colli_dmg").disabled = true
-
-
+	
 func _on_squelette_area_attaque_body_entered(body):
 	
 	if body.global_position.x <= self.global_position.x:
 		self.get_node("squelette_area_dmg/squelette_colli_dmg").position.x = -80
 	else:
 		self.get_node("squelette_area_dmg/squelette_colli_dmg").position.x = -24
-	
-	_degat_squelette(body)
+
 		
