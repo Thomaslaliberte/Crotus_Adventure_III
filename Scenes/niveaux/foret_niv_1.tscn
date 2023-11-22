@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://br2jwcmc5t46n"]
+[gd_scene load_steps=8 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
 [ext_resource type="Script" path="res://Scripts/niveau_foret/foret_niv_1.gd" id="1_j3lh1"]
 [ext_resource type="PackedScene" uid="uid://bgm4vvo3mcxct" path="res://Scenes/objets/bottletscn.tscn" id="3_b35xr"]
 [ext_resource type="PackedScene" uid="uid://c5imn10j8wbae" path="res://Scenes/niveaux/glissade_area_2d.tscn" id="4_nfqdj"]
 [ext_resource type="PackedScene" uid="uid://d0vy7sawl8agc" path="res://Scenes/niveaux/sortie_foret.tscn" id="6_1e0vt"]
+[ext_resource type="AudioStream" uid="uid://cl8yixecd1hfv" path="res://Assets/Musique/Night Ambient 1.mp3" id="6_isyqt"]
+[ext_resource type="AudioStream" uid="uid://c563qh1yeaxhu" path="res://Assets/Musique/Ambient 2.mp3" id="6_mrgif"]
 
 [node name="foret_niv_1" type="Node2D"]
 script = ExtResource("1_j3lh1")
@@ -15,33 +17,46 @@ script = null
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
 position = Vector2(2493, 403)
 
-[node name="glissade_area2d" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(2747, 408)
+[node name="glissade_area2d" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
+position = Vector2(2748, 408)
 
-[node name="glissade_area2d2" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(2726, 408)
+[node name="glissade_area2d2" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
+position = Vector2(2724, 408)
 
-[node name="glissade_area2d3" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(2795, 408)
+[node name="glissade_area2d3" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
+position = Vector2(2796, 408)
 
-[node name="glissade_area2d4" parent="." instance=ExtResource("4_nfqdj")]
-position = Vector2(2771, 408)
+[node name="glissade_area2d4" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
+position = Vector2(2772, 408)
 
-[node name="glissade_area2d5" parent="." instance=ExtResource("4_nfqdj")]
+[node name="glissade_area2d5" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
 position = Vector2(3277, 408)
 
-[node name="glissade_area2d6" parent="." instance=ExtResource("4_nfqdj")]
+[node name="glissade_area2d6" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
 position = Vector2(3255, 420)
 
-[node name="glissade_area2d7" parent="." instance=ExtResource("4_nfqdj")]
+[node name="glissade_area2d7" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
 position = Vector2(3301, 408)
 
-[node name="glissade_area2d8" parent="." instance=ExtResource("4_nfqdj")]
+[node name="glissade_area2d8" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
 position = Vector2(3325, 408)
 
 [node name="sortie_foret" parent="." instance=ExtResource("6_1e0vt")]
 position = Vector2(3353, 321)
 
+[node name="boite_de_musique_caverne" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(2776, 125)
+stream = ExtResource("6_mrgif")
+autoplay = true
+max_distance = 1800.0
+
+[node name="boite_de_musique_foret" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_isyqt")
+autoplay = true
+max_distance = 1200.0
+attenuation = 0.5
+
+[connection signal="cacher" from="." to="bottle_area_2d" method="_on_foret_niv_1_cacher"]
 [connection signal="lever" from="glissade_area2d" to="." method="_on_glissade_area_2d_lever"]
 [connection signal="lever" from="glissade_area2d2" to="." method="_on_glissade_area_2d_2_lever"]
 [connection signal="lever" from="glissade_area2d3" to="." method="_on_glissade_area_2d_3_lever"]

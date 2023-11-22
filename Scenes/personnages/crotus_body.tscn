@@ -706,7 +706,7 @@ position = Vector2(-38, 2)
 shape = SubResource("CircleShape2D_am1fs")
 disabled = true
 
-[node name="detection_attaque" type="Area2D" parent="."]
+[node name="detection_attaque" type="Area2D" parent="." groups=["presence_crotus"]]
 collision_layer = 15
 collision_mask = 15
 
@@ -739,3 +739,4 @@ disabled = true
 [connection signal="mort" from="." to="machine_etat/attaque" method="_on_crotus_body_mort"]
 [connection signal="mort" from="." to="machine_etat/degat" method="_on_crotus_body_mort"]
 [connection signal="area_entered" from="detection_attaque" to="." method="_on_detection_attaque_area_entered"]
+[connection signal="area_exited" from="detection_attaque" to="." method="_on_detection_attaque_area_exited"]

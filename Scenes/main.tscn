@@ -15,7 +15,6 @@ position = Vector2(70, 532)
 
 [node name="vie" parent="crotus_body/interface_canvasLayer" instance=ExtResource("3_udgmn")]
 
-[connection signal="cacher_bouteille" from="." to="crotus_body" method="_on_main_cacher_bouteille"]
 [connection signal="empecher_lever" from="." to="crotus_body" method="_on_main_empecher_lever"]
 [connection signal="glissade_crotus" from="." to="crotus_body" method="_on_main_glissade_crotus"]
 [connection signal="changer_vie" from="crotus_body" to="crotus_body/interface_canvasLayer/vie" method="_on_crotus_body_changer_vie"]

@@ -1,5 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://duomqwkxo4622"]
+[gd_scene load_steps=43 format=3 uid="uid://duomqwkxo4622"]
 
+[ext_resource type="Texture2D" uid="uid://c4no43m0ox32" path="res://Assets/oak_woods_v1.0/background/background_layer_4.png" id="1_df3ql"]
+[ext_resource type="Texture2D" uid="uid://chv48wnsp78vq" path="res://Assets/oak_woods_v1.0/background/sky.jpg" id="1_f1onn"]
 [ext_resource type="Texture2D" uid="uid://bgmyyoa62uuyy" path="res://Assets/oak_woods_v1.0/background/background_layer_1.png" id="2_exrat"]
 [ext_resource type="Texture2D" uid="uid://hxb3yhg0h5it" path="res://Assets/oak_woods_v1.0/background/background_layer_2.png" id="3_p13tx"]
 [ext_resource type="Texture2D" uid="uid://cvi2oi02qm5ox" path="res://Assets/oak_woods_v1.0/background/background_layer_3.png" id="4_ae1k7"]
@@ -25,6 +27,77 @@ script/source = "extends Node2D
 #La bouteille au sommet est pour obtenir un pouvoir et le pièce sont dans la montagne en guise de décoration
 # Une fois la bouteille rammaser le joueur pourra glisser et donc passer en-dessous de la montagne
 "
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0r0of"]
+texture = ExtResource("1_df3ql")
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+0:9/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+4:8/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+7:8/0 = 0
+8:9/0 = 0
+8:8/0 = 0
+8:7/0 = 0
+7:7/0 = 0
+9:8/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+13:9/0 = 0
+13:7/0 = 0
+14:8/0 = 0
+14:7/0 = 0
+14:9/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+19:8/0 = 0
+19:7/0 = 0
+18:8/0 = 0
+17:8/0 = 0
+16:8/0 = 0
+15:8/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r8y0n"]
+sources/0 = SubResource("TileSetAtlasSource_0r0of")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hahno"]
 texture = ExtResource("2_exrat")
@@ -8031,8 +8104,20 @@ sources/8 = SubResource("TileSetAtlasSource_itxl3")
 sources/9 = SubResource("TileSetAtlasSource_ykt1k")
 sources/10 = SubResource("TileSetAtlasSource_45ts0")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rmma6"]
+texture = ExtResource("1_f1onn")
+texture_region_size = Vector2i(1280, 390)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cepif"]
+sources/0 = SubResource("TileSetAtlasSource_rmma6")
+
 [node name="foret_base" type="Node2D"]
 script = SubResource("GDScript_jg7q6")
+
+[node name="background04_foret_tilemap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_r8y0n")
+format = 2
 
 [node name="background03_foret_tilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rd35s")
@@ -8056,4 +8141,8 @@ format = 2
 
 [node name="decoration_tilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kp8q5")
+format = 2
+
+[node name="background_ciel" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cepif")
 format = 2

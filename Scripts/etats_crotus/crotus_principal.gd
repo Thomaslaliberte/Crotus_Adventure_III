@@ -12,11 +12,13 @@ var vielle_vie = vie
 #les états
 var lever = true
 
+
 #les capacités
 var glissade = false
 var saut_x2 = 1
-
-
+	
+	
+	
 func _physics_process(_delta):
 	
 	if is_on_floor():
@@ -32,7 +34,8 @@ func _physics_process(_delta):
 func _perdre_vie():
 	vie = vie -1
 	changer_vie.emit(vie)
-	
+
+
 
 func _on_detection_attaque_area_entered(area):
 	print(area)
@@ -42,6 +45,13 @@ func _on_detection_attaque_area_entered(area):
 			mort.emit()
 		else:
 			degat_crotus.emit(area)
+	if area.is_in_group("feu"):
+		for n in 5:
+			await get_tree().create_timer(1).timeout
+			if vie < 5:
+				vie += 1
+				changer_vie.emit(vie)
+
 
 func _on_main_glissade_crotus():
 	glissade = true

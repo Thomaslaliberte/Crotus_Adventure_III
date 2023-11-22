@@ -1,16 +1,21 @@
 extends Area2D
 
-signal lever
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$feu_anim.play("default")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var bodies = get_overlapping_bodies()
-	for body in bodies:
-		if body.is_in_group("joueur"):
-			lever.emit()
-		
+	pass
 
+
+
+func _on_area_entered(area):
+	if area.is_in_group("presence_crotus"):
+		$feu_anim.play("soins")
+
+
+func _on_area_exited(area):
+	$feu_anim.play("default")

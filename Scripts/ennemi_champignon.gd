@@ -36,7 +36,7 @@ func _physics_process(delta):
 		$champignon_anim.play("idle")
 	timer = timer + delta
 
-	print(aleatoire)
+
 	if timer > wait_time:
 		timer = 0
 		
