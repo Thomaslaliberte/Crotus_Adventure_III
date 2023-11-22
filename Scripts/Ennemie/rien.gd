@@ -26,10 +26,12 @@ func _on_timer_timeout():
 
 
 func _on_champi_atk_area_body_entered(body):
-	if body.is_in_group("joueur"):
+	if body.is_in_group("joueur") and acteur.vie !=0:
+		
 		if body.global_position.x <= acteur.global_position.x:
 			acteur.get_node("champignon_anim").flip_h = true
 			
 		else:
 			acteur.get_node("champignon_anim").flip_h = false
+			
 		etat_change.emit("attaquer")

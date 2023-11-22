@@ -15,7 +15,7 @@ func Initialisation():
 	acteur.get_child(1).set_deferred("disabled", true)
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
-	var glissade = Input.is_action_just_pressed("glissade")
+	
 	
 	if acteur.get_child(0).flip_h == false:
 		acteur.velocity.x = 1.5*acteur.run_speed
@@ -33,6 +33,7 @@ func Process(_delta):
 
 
 func _on_crotus_body_degat_crotus(area):
+	print(area)
 	etat_change.emit("degat")
 
 

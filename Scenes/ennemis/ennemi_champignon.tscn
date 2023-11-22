@@ -1,14 +1,18 @@
-[gd_scene load_steps=36 format=3 uid="uid://cdfq35481214f"]
+[gd_scene load_steps=47 format=3 uid="uid://cdfq35481214f"]
 
 [ext_resource type="Texture2D" uid="uid://bhjhjo32ocv85" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Attack.png" id="1_ihuil"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/ennemi_champignon.gd" id="1_pcuv2"]
 [ext_resource type="Texture2D" uid="uid://d1xgb1b2ivhd6" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Idle.png" id="2_hf572"]
+[ext_resource type="Texture2D" uid="uid://xbemcndnsiq8" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Take Hit.png" id="3_7axqs"]
 [ext_resource type="Texture2D" uid="uid://c2rbykq7svtwq" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Run.png" id="3_df5rv"]
+[ext_resource type="Texture2D" uid="uid://cgkxlaivuv4ar" path="res://Assets/Monsters_Creatures_Fantasy/Mushroom/Death.png" id="4_2wng0"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/machine_etat_champi.gd" id="4_7hcqf"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/rien.gd" id="6_n6mhj"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/droite.gd" id="7_uawmp"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/gauche.gd" id="8_vwta0"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/attaquer.gd" id="9_8rjxq"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/champi_mort.gd" id="10_1n5ys"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/champi_degat.gd" id="11_h4sy1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqyco"]
 atlas = ExtResource("1_ihuil")
@@ -41,6 +45,34 @@ region = Rect2(900, 0, 150, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4w6j"]
 atlas = ExtResource("1_ihuil")
 region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcnxb"]
+atlas = ExtResource("3_7axqs")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81pdu"]
+atlas = ExtResource("3_7axqs")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1pre"]
+atlas = ExtResource("3_7axqs")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqcp7"]
+atlas = ExtResource("4_2wng0")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0kvr"]
+atlas = ExtResource("4_2wng0")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khwwe"]
+atlas = ExtResource("4_2wng0")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2i8y"]
+atlas = ExtResource("4_2wng0")
+region = Rect2(450, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmy4i"]
 atlas = ExtResource("3_df5rv")
@@ -123,6 +155,37 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hcnxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81pdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1pre")
+}],
+"loop": false,
+"name": &"champi_degat",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqcp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0kvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khwwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2i8y")
+}],
+"loop": false,
+"name": &"champi_mort",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fmy4i")
 }, {
 "duration": 1.0,
@@ -191,7 +254,7 @@ script = ExtResource("1_pcuv2")
 [node name="champignon_anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_4byw1")
-animation = &"idle"
+animation = &"champi_degat"
 
 [node name="champignon_collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_80v78")
@@ -222,6 +285,14 @@ acteur = NodePath("../..")
 script = ExtResource("9_8rjxq")
 acteur = NodePath("../..")
 
+[node name="mort" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("10_1n5ys")
+acteur = NodePath("../..")
+
+[node name="degat" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("11_h4sy1")
+acteur = NodePath("../..")
+
 [node name="champi_area_atk_droite" type="Area2D" parent="." groups=["attaque_ennemie"]]
 
 [node name="champi_colli_atk_droite" type="CollisionShape2D" parent="champi_area_atk_droite"]
@@ -242,4 +313,4 @@ shape = SubResource("RectangleShape2D_bi66q")
 disabled = true
 
 [connection signal="body_entered" from="champi_atk_area" to="machine_etat/rien" method="_on_champi_atk_area_body_entered"]
-[connection signal="area_entered" from="chami_area" to="." method="_on_chami_area_area_entered"]
+[connection signal="area_entered" from="chami_area" to="machine_etat/degat" method="_on_chami_area_area_entered"]

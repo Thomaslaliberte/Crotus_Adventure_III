@@ -3,13 +3,13 @@ extends "res://Scripts/etats_crotus/etat.gd"
 @export var acteur: CharacterBody2D
 
 func Initialisation():
-	acteur.run_speed = 105
+	acteur.run_speed = 70
 	acteur.get_node("goblin_anim").play("goblin_attaque")
-	
+	acteur.get_node("goblin_area_dmg/goblin_colli_dmg").disabled = false
 	
 func Process(_delta):
 	
-	
+
 	if acteur.cible.global_position.x +15 < acteur.global_position.x -15:
 
 		acteur.velocity.x = -1*acteur.run_speed
@@ -33,12 +33,12 @@ func Process(_delta):
 	
 
 func _on_goblin_area_attaque_body_exited(body):
-	acteur.run_speed /= 1.5
-	etat_change.emit("rien")
+	if acteur.vie !=0:
+		etat_change.emit("rien")
 
 
 func _on_goblin_area_attaque_body_entered(body):
-	if body.is_in_group("joueur"):			
+	if body.is_in_group("joueur") and acteur.vie != 0:			
 		acteur.cible = body
 		
 		if acteur.cible.vie != 0:

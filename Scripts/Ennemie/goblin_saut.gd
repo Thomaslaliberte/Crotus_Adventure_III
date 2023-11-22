@@ -7,7 +7,6 @@ func Initialisation():
 	pass
 	
 func Process(_delta):
-	print("saut")
 
 	acteur.velocity.y += acteur.jump_speed
 

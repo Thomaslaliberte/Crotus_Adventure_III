@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 var run_speed = 50.0
+var jump_speed = -20
 var timer = Timer.new()
 var gravite = 950
+var vie = 4
 
 func _ready():
 	timer.set_wait_time(3)

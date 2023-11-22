@@ -23,6 +23,7 @@ func Process(_delta):
 
 
 func _on_crotus_body_degat_crotus(area):
+	area = area
 	etat_change.emit("degat")
 
 

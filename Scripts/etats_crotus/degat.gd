@@ -6,7 +6,6 @@ var timer = Timer.new()
 func Initialisation():
 	acteur.velocity.x = 0
 	timer.set_wait_time(0.4)
-	self.add_child(timer)
 	timer.one_shot = true
 	timer.start()
 	acteur.get_child(0).play("crotus_saut_fin")

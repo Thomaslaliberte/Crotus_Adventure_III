@@ -1,15 +1,19 @@
-[gd_scene load_steps=40 format=3 uid="uid://05nphpu2ckri"]
+[gd_scene load_steps=52 format=3 uid="uid://05nphpu2ckri"]
 
 [ext_resource type="Texture2D" uid="uid://p64vi7bcjb76" path="res://Assets/Monsters_Creatures_Fantasy/Goblin/Run.png" id="1_fn71b"]
 [ext_resource type="Texture2D" uid="uid://w000atyxv124" path="res://Assets/Monsters_Creatures_Fantasy/Goblin/Idle.png" id="1_h2m88"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/goblin.gd" id="1_uxltn"]
 [ext_resource type="Texture2D" uid="uid://dydhgymr70ykr" path="res://Assets/Monsters_Creatures_Fantasy/Goblin/Attack.png" id="3_fsgtv"]
+[ext_resource type="Texture2D" uid="uid://c13mb5ay6el6m" path="res://Assets/Monsters_Creatures_Fantasy/Goblin/Take Hit.png" id="4_540tr"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/machine_etat_goblin.gd" id="4_uf8a7"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/goblin_rien.gd" id="5_1dq1x"]
+[ext_resource type="Texture2D" uid="uid://c4x2e8t1aw6fm" path="res://Assets/Monsters_Creatures_Fantasy/Goblin/Death.png" id="5_82quc"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/goblin_droite.gd" id="6_k1ini"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/goblin_gauche.gd" id="7_0q2kk"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/goblin_chasse.gd" id="8_w7q3s"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/goblin_saut.gd" id="9_vy0de"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/goblin_mort.gd" id="11_cdty4"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/goblin_degat.gd" id="12_5hjbp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ikar"]
 atlas = ExtResource("1_fn71b")
@@ -98,6 +102,34 @@ region = Rect2(900, 0, 150, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bn10"]
 atlas = ExtResource("1_fn71b")
 region = Rect2(1050, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqo6m"]
+atlas = ExtResource("4_540tr")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylusx"]
+atlas = ExtResource("4_540tr")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exx1p"]
+atlas = ExtResource("4_540tr")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43h88"]
+atlas = ExtResource("5_82quc")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xjo2"]
+atlas = ExtResource("5_82quc")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv45n"]
+atlas = ExtResource("5_82quc")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8vjk"]
+atlas = ExtResource("5_82quc")
+region = Rect2(450, 0, 150, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2kr5j"]
 atlas = ExtResource("1_h2m88")
@@ -195,6 +227,37 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_eqo6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylusx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exx1p")
+}],
+"loop": false,
+"name": &"goblin_degat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43h88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xjo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv45n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8vjk")
+}],
+"loop": false,
+"name": &"goblin_mort",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2kr5j")
 }, {
 "duration": 1.0,
@@ -212,21 +275,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmpuo"]
-size = Vector2(32, 37)
+size = Vector2(38.7252, 45.8276)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhcnp"]
-size = Vector2(292.25, 153)
+size = Vector2(674.089, 389.715)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt84i"]
+size = Vector2(54.2234, 65.6388)
 
 [node name="goblin_body" type="CharacterBody2D"]
+position = Vector2(0, 1)
+scale = Vector2(0.705, 0.705)
 script = ExtResource("1_uxltn")
 
 [node name="goblin_anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.705, 0.705)
 sprite_frames = SubResource("SpriteFrames_27h32")
 animation = &"goblin_attaque"
-frame_progress = 0.56788
+frame_progress = 0.44804
 
 [node name="goblin_colli" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 6.5)
+position = Vector2(-3.37064, 3.38827)
+scale = Vector2(0.705, 0.705)
 shape = SubResource("RectangleShape2D_kmpuo")
 
 [node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]
@@ -253,17 +324,39 @@ acteur = NodePath("../..")
 script = ExtResource("8_w7q3s")
 acteur = NodePath("../..")
 
+[node name="mort" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("11_cdty4")
+acteur = NodePath("../..")
+
+[node name="degat" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("12_5hjbp")
+acteur = NodePath("../..")
+
 [node name="goblin_area_attaque" type="Area2D" parent="."]
+scale = Vector2(0.705, 0.705)
 collision_layer = 0
 
 [node name="goblin_colli_attaque" type="CollisionShape2D" parent="goblin_area_attaque"]
-position = Vector2(0, 0.5)
+position = Vector2(-4.02396, 0)
+scale = Vector2(0.705, 0.705)
 shape = SubResource("RectangleShape2D_jhcnp")
 
 [node name="goblin_area_dmg" type="Area2D" parent="." groups=["attaque_ennemie"]]
+scale = Vector2(0.705, 0.705)
 
 [node name="goblin_colli_dmg" type="CollisionPolygon2D" parent="goblin_area_dmg"]
+position = Vector2(1.33369, -0.811431)
+scale = Vector2(0.889129, 0.806687)
 polygon = PackedVector2Array(-38, -23, -51, -9, 24, 30, 48, 20, 38, 7)
+
+[node name="goblin_area_touche" type="Area2D" parent="."]
+scale = Vector2(0.705, 0.705)
+
+[node name="goblin_colli_touche" type="CollisionShape2D" parent="goblin_area_touche"]
+position = Vector2(-5.02993, 5.02993)
+scale = Vector2(0.705, 0.705)
+shape = SubResource("RectangleShape2D_pt84i")
 
 [connection signal="body_entered" from="goblin_area_attaque" to="machine_etat/chasse" method="_on_goblin_area_attaque_body_entered"]
 [connection signal="body_exited" from="goblin_area_attaque" to="machine_etat/chasse" method="_on_goblin_area_attaque_body_exited"]
+[connection signal="area_entered" from="goblin_area_touche" to="machine_etat/degat" method="_on_goblin_area_touche_area_entered"]
