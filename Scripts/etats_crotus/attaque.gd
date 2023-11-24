@@ -5,8 +5,7 @@ extends "res://Scripts/etats_crotus/etat.gd"
 # Called when the node enters the scene tree for the first time.
 func Initialisation():
 	acteur.get_node('crotus_anim').play("crotus_atk_01")
-	if acteur.velocity.x != 0:
-		acteur.velocity.x = acteur.velocity.x/2
+	acteur.velocity.x = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
@@ -21,10 +20,3 @@ func Process(_delta):
 		acteur.get_node("attaque_gauche_zone").get_child(0).disabled = true
 		etat_change.emit("rien")
 
-
-func _on_crotus_body_degat_crotus():
-	etat_change.emit("degat")
-
-
-func _on_crotus_body_mort():
-	etat_change.emit("mort")

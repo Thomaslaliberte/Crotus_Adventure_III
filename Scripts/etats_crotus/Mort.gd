@@ -1,6 +1,7 @@
 extends "res://Scripts/etats_crotus/etat.gd"
 
 signal fin
+signal son_mort
 @export var acteur: CharacterBody2D
 var timer = Timer.new()
 # Called when the node enters the scene tree for the first time.
@@ -14,6 +15,8 @@ func Initialisation():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process(_delta):
+	print("mort")
+	son_mort.emit()
 	acteur.velocity.x = 0
 	acteur.get_node("crotus_colli_mort").set_deferred("disabled", false)
 	acteur.get_child(2).set_deferred("disabled", true)
@@ -21,4 +24,8 @@ func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
 	if acteur.is_on_floor() and timer.is_stopped():
 		fin.emit()
-			
+		etat_change.emit("rien")
+
+
+func _on_crotus_body_mort():
+	etat_change.emit("mort")

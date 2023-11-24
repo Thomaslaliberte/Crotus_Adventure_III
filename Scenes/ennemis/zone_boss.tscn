@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://qbb86qjdcjwn"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_mousse/zone_boss.gd" id="1_784iw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hdgx"]
+size = Vector2(19, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mixp2"]
+size = Vector2(25, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rta0m"]
+size = Vector2(438, 317)
+
+[node name="zone_boss" type="Node2D"]
+script = ExtResource("1_784iw")
+
+[node name="mur_gauche" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="mur_gauche_collision" type="CollisionShape2D" parent="mur_gauche"]
+position = Vector2(12, 125.5)
+shape = SubResource("RectangleShape2D_7hdgx")
+disabled = true
+
+[node name="mur_droit" type="RigidBody2D" parent="."]
+mass = 1.05
+gravity_scale = 0.0
+
+[node name="mur_droit_collision" type="CollisionShape2D" parent="mur_droit"]
+position = Vector2(525, -92.5)
+shape = SubResource("RectangleShape2D_mixp2")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(265, 27.5)
+shape = SubResource("RectangleShape2D_rta0m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(267, 26)
+enabled = false
+zoom = Vector2(2, 2)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

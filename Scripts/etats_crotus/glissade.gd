@@ -31,11 +31,3 @@ func Process(_delta):
 		etat_change.emit("rien")
 	acteur.lever = true
 
-
-func _on_crotus_body_degat_crotus(area):
-	print(area)
-	etat_change.emit("degat")
-
-
-func _on_crotus_body_mort():
-	etat_change.emit("mort")

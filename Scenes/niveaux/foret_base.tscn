@@ -8133,14 +8133,17 @@ format = 2
 
 [node name="block_tilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cqkt7")
+cell_quadrant_size = 24
 format = 2
 
 [node name="block_coli_tilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rvy2j")
+cell_quadrant_size = 24
 format = 2
 
 [node name="decoration_tilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kp8q5")
+cell_quadrant_size = 1
 format = 2
 
 [node name="background_ciel" type="TileMap" parent="."]

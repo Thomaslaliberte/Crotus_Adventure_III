@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp1f5n04yjiso"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_mousse/area_affichage_feu.gd" id="1_psj07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_larq2"]
+size = Vector2(38, 74)
+
+[node name="didactiel_feu" type="Node"]
+
+[node name="affichage_feu" type="Label" parent="."]
+offset_left = 1034.0
+offset_top = 1001.0
+offset_right = 1240.0
+offset_bottom = 1053.0
+text = "passer devant le feu vas
+lentement regenerer la vie"
+horizontal_alignment = 1
+
+[node name="area_affichage_feu" type="Area2D" parent="."]
+position = Vector2(1132, 986)
+script = ExtResource("1_psj07")
+
+[node name="area_affichage_feu_colli" type="CollisionShape2D" parent="area_affichage_feu"]
+position = Vector2(1, -27)
+shape = SubResource("RectangleShape2D_larq2")

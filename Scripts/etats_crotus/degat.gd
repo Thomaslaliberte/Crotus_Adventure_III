@@ -18,6 +18,7 @@ func Process(_delta):
 		etat_change.emit("rien")
 
 func _on_crotus_body_degat_crotus(area):
+	etat_change.emit("degat")
 	acteur.velocity.y += acteur.jump_speed/2
 	if area.global_position.x <= acteur.global_position.x:
 		acteur.velocity.x += acteur.run_speed

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://jfinchit8syn"]
+
+[ext_resource type="Texture2D" uid="uid://6ev3l6jl8xhx" path="res://Assets/ecran_fin/restart.png" id="1_6s33b"]
+[ext_resource type="Texture2D" uid="uid://316pcvi5uosr" path="res://Assets/ecran_fin/you_died.png" id="1_dslye"]
+[ext_resource type="Texture2D" uid="uid://tlxjjxlp0hrd" path="res://Assets/ecran_fin/restart_appuyer.png" id="2_e3tvi"]
+
+[node name="ecran_mort" type="Node"]
+
+[node name="message_mort" type="Sprite2D" parent="."]
+position = Vector2(992, 528)
+scale = Vector2(2.27039, 3.34503)
+texture = ExtResource("1_dslye")
+
+[node name="Camera2D" type="Camera2D" parent="message_mort"]
+scale = Vector2(5.85042, -7624.83)
+zoom = Vector2(0.8, 0.8)
+
+[node name="boutton_restart" type="TouchScreenButton" parent="."]
+position = Vector2(776, 708)
+scale = Vector2(0.703812, 0.879121)
+texture_normal = ExtResource("1_6s33b")
+texture_pressed = ExtResource("2_e3tvi")
+action = "restart"

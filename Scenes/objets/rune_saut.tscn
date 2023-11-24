@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1vnxuv43euek"]
+
+[ext_resource type="Texture2D" uid="uid://dy88017u4rt1o" path="res://Assets/Mystic RPG icon pack/Sprites/200%/Rune_11.png" id="1_dugus"]
+[ext_resource type="Script" path="res://Scripts/objet/rune_saut.gd" id="1_ksfjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqgvc"]
+size = Vector2(30, 36)
+
+[node name="rune_saut_area_2d" type="Area2D"]
+script = ExtResource("1_ksfjv")
+
+[node name="rune_saut_sprite_2d" type="Sprite2D" parent="."]
+position = Vector2(-1, -0.999999)
+scale = Vector2(1.28125, 1.28125)
+texture = ExtResource("1_dugus")
+
+[node name="rune_saut_colli" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_yqgvc")

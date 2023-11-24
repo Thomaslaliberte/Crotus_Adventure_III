@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx0ksn776gjba"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_foret/area_affichage_glissade.gd" id="1_iq6gy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8v58"]
+size = Vector2(109, 102)
+
+[node name="didactiel_glissade" type="Node"]
+
+[node name="affichage_glissade" type="Label" parent="."]
+offset_left = 2048.0
+offset_top = -244.0
+offset_right = 2266.0
+offset_bottom = -218.0
+text = "appuyer sur ctrl pour glisser"
+
+[node name="area_affichage_glissade" type="Area2D" parent="."]
+script = ExtResource("1_iq6gy")
+
+[node name="area_affichage_glissade_colli" type="CollisionShape2D" parent="area_affichage_glissade"]
+position = Vector2(2215.5, -282)
+shape = SubResource("RectangleShape2D_t8v58")

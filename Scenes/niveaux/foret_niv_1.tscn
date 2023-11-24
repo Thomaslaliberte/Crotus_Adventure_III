@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://br2jwcmc5t46n"]
+[gd_scene load_steps=12 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
 [ext_resource type="Script" path="res://Scripts/niveau_foret/foret_niv_1.gd" id="1_j3lh1"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://d0vy7sawl8agc" path="res://Scenes/niveaux/sortie_foret.tscn" id="6_1e0vt"]
 [ext_resource type="AudioStream" uid="uid://cl8yixecd1hfv" path="res://Assets/Musique/Night Ambient 1.mp3" id="6_isyqt"]
 [ext_resource type="AudioStream" uid="uid://c563qh1yeaxhu" path="res://Assets/Musique/Ambient 2.mp3" id="6_mrgif"]
+[ext_resource type="PackedScene" uid="uid://pq7gqpdcs4he" path="res://Scenes/niveaux/didactiel_mouvement.tscn" id="8_b0w1w"]
+[ext_resource type="PackedScene" uid="uid://cbptg8gmxqnuv" path="res://Scenes/niveaux/didactiel_saut.tscn" id="9_3g6yk"]
+[ext_resource type="PackedScene" uid="uid://it315da7oqb1" path="res://Scenes/niveaux/didactiel_attaque.tscn" id="10_gqade"]
+[ext_resource type="PackedScene" uid="uid://cx0ksn776gjba" path="res://Scenes/niveaux/didactiel_glissade.tscn" id="11_12nxq"]
 
 [node name="foret_niv_1" type="Node2D"]
 script = ExtResource("1_j3lh1")
@@ -15,7 +19,7 @@ script = ExtResource("1_j3lh1")
 script = null
 
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
-position = Vector2(2493, 403)
+position = Vector2(2668, 403)
 
 [node name="glissade_area2d" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
 position = Vector2(2748, 408)
@@ -55,6 +59,14 @@ stream = ExtResource("6_isyqt")
 autoplay = true
 max_distance = 1200.0
 attenuation = 0.5
+
+[node name="mouvement" parent="." instance=ExtResource("8_b0w1w")]
+
+[node name="didactiel_saut" parent="." instance=ExtResource("9_3g6yk")]
+
+[node name="didactiel_attaque" parent="." instance=ExtResource("10_gqade")]
+
+[node name="didactiel_glissade" parent="." instance=ExtResource("11_12nxq")]
 
 [connection signal="cacher" from="." to="bottle_area_2d" method="_on_foret_niv_1_cacher"]
 [connection signal="lever" from="glissade_area2d" to="." method="_on_glissade_area_2d_lever"]

@@ -7,10 +7,9 @@ func Initialisation():
 	if acteur.is_on_floor():
 		acteur.get_child(0).play("crotus_rien")
 		acteur.velocity.x = 0
-	
+	acteur.get_node("crotus_colli_mort").set_deferred("disabled", true)
 	acteur.get_child(2).set_deferred("disabled", true)
 	acteur.get_child(1).set_deferred("disabled", false)
-	
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
 	
@@ -42,9 +41,6 @@ func Process(_delta):
 	
 
 
-func _on_crotus_body_degat_crotus(area):
-	etat_change.emit("degat")
 
-
-func _on_crotus_body_mort():
-	etat_change.emit("mort")
+func _on_crotus_body_faire_rien():
+	etat_change.emit("rien")

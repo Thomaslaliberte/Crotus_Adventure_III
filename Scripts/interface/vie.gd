@@ -17,11 +17,6 @@ func _ready():
 	coeur5.set_visible(true) 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-
 
 func _on_crotus_body_changer_vie(vie):
 	var temp = 0

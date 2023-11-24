@@ -5,7 +5,8 @@ func _ready():
 signal glissade
 
 func _process(delta):
-	
+	#pour ne pas recevoir d'avertissement
+	delta = delta
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("joueur"):

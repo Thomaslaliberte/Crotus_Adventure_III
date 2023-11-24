@@ -641,6 +641,7 @@ disabled = true
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 limit_left = -10
+limit_top = -490
 limit_right = 3300
 drag_horizontal_enabled = true
 
@@ -718,25 +719,10 @@ position = Vector2(2, 15.5)
 shape = SubResource("RectangleShape2D_384lq")
 disabled = true
 
-[connection signal="degat_crotus" from="." to="machine_etat/rien" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/saut" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/course" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/en_air" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/glissade" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/saut_x2" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/acroupie" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/marche_acroupie" method="_on_crotus_body_degat_crotus"]
-[connection signal="degat_crotus" from="." to="machine_etat/attaque" method="_on_crotus_body_degat_crotus"]
+[node name="sons_crotus" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="degat_crotus" from="." to="machine_etat/degat" method="_on_crotus_body_degat_crotus"]
-[connection signal="mort" from="." to="machine_etat/rien" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/saut" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/course" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/en_air" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/glissade" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/saut_x2" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/acroupie" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/marche_acroupie" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/attaque" method="_on_crotus_body_mort"]
-[connection signal="mort" from="." to="machine_etat/degat" method="_on_crotus_body_mort"]
+[connection signal="faire_rien" from="." to="machine_etat/rien" method="_on_crotus_body_faire_rien"]
+[connection signal="mort" from="." to="machine_etat/mort" method="_on_crotus_body_mort"]
+[connection signal="son_mort" from="machine_etat/mort" to="." method="_on_mort_son_mort"]
 [connection signal="area_entered" from="detection_attaque" to="." method="_on_detection_attaque_area_entered"]
-[connection signal="area_exited" from="detection_attaque" to="." method="_on_detection_attaque_area_exited"]

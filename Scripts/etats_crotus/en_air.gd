@@ -4,7 +4,6 @@ extends "res://Scripts/etats_crotus/etat.gd"
 
 func Initialisation():
 	acteur.get_child(0).play("crotus_saut_fin")
-	
 
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
@@ -26,11 +25,3 @@ func Process(_delta):
 	if attaque:
 		etat_change.emit("attaque")
 
-
-func _on_crotus_body_degat_crotus(area):
-	area = area
-	etat_change.emit("degat")
-
-
-func _on_crotus_body_mort():
-	etat_change.emit("mort")

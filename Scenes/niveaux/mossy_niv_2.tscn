@@ -1,18 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://uhrcfht7s6wx"]
+[gd_scene load_steps=11 format=3 uid="uid://uhrcfht7s6wx"]
 
 [ext_resource type="PackedScene" uid="uid://dptaybmitd5cy" path="res://Scenes/niveaux/mossy_passage.tscn" id="1_8j80p"]
+[ext_resource type="Script" path="res://Scripts/niveau_mousse/mossy_niv_2.gd" id="1_ihvgv"]
 [ext_resource type="PackedScene" uid="uid://1rhv8ga4dg75" path="res://Scenes/ennemis/ennemi_squelette.tscn" id="2_dxvxy"]
 [ext_resource type="PackedScene" uid="uid://05nphpu2ckri" path="res://Scenes/ennemis/ennemi_goblin.tscn" id="4_furju"]
-[ext_resource type="PackedScene" uid="uid://bvb1b2wm3f010" path="res://Scenes/ennemis/ennemi_flottant.tscn" id="5_yhcp4"]
+[ext_resource type="PackedScene" uid="uid://dyiewmxryua6m" path="res://Scenes/niveaux/sortie_passage_mousse_1.tscn" id="5_o5owo"]
+[ext_resource type="PackedScene" uid="uid://b1vnxuv43euek" path="res://Scenes/objets/rune_saut.tscn" id="6_d0ftt"]
+[ext_resource type="AudioStream" uid="uid://bk6povoivqmxg" path="res://Assets/Musique/Ambient 3.mp3" id="8_qso8d"]
+[ext_resource type="PackedScene" uid="uid://cl6gjqlxan551" path="res://Scenes/objets/feu.tscn" id="9_wshyt"]
+[ext_resource type="PackedScene" uid="uid://034qon3xb30q" path="res://Scenes/niveaux/didactiel_double_saut.tscn" id="10_8xxs3"]
 
 [node name="mossy_niv_2" type="Node2D"]
 position = Vector2(9, -372)
+script = ExtResource("1_ihvgv")
 
 [node name="mossy_base" parent="." instance=ExtResource("1_8j80p")]
 position = Vector2(-8, 43)
 
 [node name="squelette_body" parent="." instance=ExtResource("2_dxvxy")]
 position = Vector2(431, 364)
+
+[node name="crotus_body" parent="." instance=ExtResource("3_1nmi1")]
+position = Vector2(43, 349)
 
 [node name="squelette_body3" parent="." instance=ExtResource("2_dxvxy")]
 position = Vector2(897, 149)
@@ -23,6 +32,21 @@ position = Vector2(733, 221)
 [node name="goblin_body" parent="." instance=ExtResource("4_furju")]
 position = Vector2(521, 824)
 
-[node name="ennemi_flottant" parent="." instance=ExtResource("5_yhcp4")]
-position = Vector2(1471, 312)
-disable_mode = 2
+[node name="sortie_passage_mousse_1" parent="." instance=ExtResource("5_o5owo")]
+position = Vector2(1287, -140)
+
+[node name="rune_saut_area_2d" parent="." instance=ExtResource("6_d0ftt")]
+position = Vector2(1439, 756)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1119, 452)
+stream = ExtResource("8_qso8d")
+autoplay = true
+max_distance = 200000.0
+
+[node name="feu" parent="." instance=ExtResource("9_wshyt")]
+position = Vector2(159, 785)
+
+[node name="didactiel_double_saut" parent="." instance=ExtResource("10_8xxs3")]
+
+[connection signal="cacher" from="." to="rune_saut_area_2d" method="_on_mossy_niv_2_cacher"]

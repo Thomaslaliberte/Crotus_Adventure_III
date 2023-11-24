@@ -51,11 +51,3 @@ func Process(_delta):
 	if attaque:
 		etat_change.emit("attaque")
 
-
-func _on_crotus_body_degat_crotus(area):
-	etat_change.emit("degat")
-	
-
-
-func _on_crotus_body_mort():
-	etat_change.emit("mort")

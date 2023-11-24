@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbptg8gmxqnuv"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_foret/area_affichage_saut.gd" id="1_2xgbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqvmi"]
+size = Vector2(324.5, 273)
+
+[node name="didactiel_saut" type="Node"]
+
+[node name="affichage_saut" type="Label" parent="."]
+offset_left = 269.0
+offset_top = 621.0
+offset_right = 562.0
+offset_bottom = 700.0
+text = "Utiliser espace pour sauter"
+
+[node name="area_affichage_saut" type="Area2D" parent="."]
+script = ExtResource("1_2xgbt")
+
+[node name="area_affichage_saut_colli" type="CollisionShape2D" parent="area_affichage_saut"]
+position = Vector2(507.25, 508)
+shape = SubResource("RectangleShape2D_aqvmi")

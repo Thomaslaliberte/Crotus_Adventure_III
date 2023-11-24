@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://it315da7oqb1"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_foret/area_affichage_attaque.gd" id="1_aoweh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xiji"]
+size = Vector2(495, 175)
+
+[node name="didactiel_attaque" type="Node"]
+
+[node name="affichage_attaque" type="Label" parent="."]
+offset_left = 854.0
+offset_top = 620.0
+offset_right = 1180.0
+offset_bottom = 646.0
+text = "appuyer sur clique gauche pour attaquer"
+
+[node name="area_affichage_attaque" type="Area2D" parent="."]
+script = ExtResource("1_aoweh")
+
+[node name="affichage_attaque_colli" type="CollisionShape2D" parent="area_affichage_attaque"]
+position = Vector2(1011.5, 498)
+shape = SubResource("RectangleShape2D_0xiji")

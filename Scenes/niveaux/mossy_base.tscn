@@ -400,7 +400,7 @@ texture_region_size = Vector2i(512, 512)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -51.2, -153.6, -51.2, 153.6, 256, -256, 256)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -51.2, -69.8182, 69.8182, 116.364, 256, -256, 256)
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
@@ -695,6 +695,11 @@ sources/4 = SubResource("TileSetAtlasSource_10iwb")
 sources/3 = SubResource("TileSetAtlasSource_bcvdm")
 
 [node name="mossy_base" type="Node2D"]
+
+[node name="background_profondeur2" type="Sprite2D" parent="."]
+position = Vector2(1607, 1117)
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("2_xtktl")
 
 [node name="background_profondeur" type="Sprite2D" parent="."]
 position = Vector2(0, 1112)

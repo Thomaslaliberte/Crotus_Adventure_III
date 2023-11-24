@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://pq7gqpdcs4he"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_foret/area_mouvement.gd" id="1_deeda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pyxe"]
+size = Vector2(270.5, 107)
+
+[node name="mouvement" type="Node"]
+
+[node name="affichage_mouvement" type="Label" parent="."]
+offset_left = 38.0
+offset_top = 618.5
+offset_right = 327.0
+offset_bottom = 683.5
+text = "Utiliser A et D pour vous déplacer 
+et S pour vous pencher"
+horizontal_alignment = 1
+
+[node name="area_mouvement" type="Area2D" parent="."]
+script = ExtResource("1_deeda")
+
+[node name="area_mouvement_colli" type="CollisionShape2D" parent="area_mouvement"]
+position = Vector2(182.75, 532)
+shape = SubResource("RectangleShape2D_7pyxe")

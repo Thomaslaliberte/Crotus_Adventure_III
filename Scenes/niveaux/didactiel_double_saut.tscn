@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://034qon3xb30q"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_mousse/area_affichage_double_saut.gd" id="1_tmnyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ickow"]
+size = Vector2(131, 74)
+
+[node name="didactiel_double_saut" type="Node"]
+
+[node name="affichage_double_saut" type="Label" parent="."]
+offset_left = 1257.0
+offset_top = 460.0
+offset_right = 1654.0
+offset_bottom = 512.0
+text = "appuyer une deuxième fois sur espace dans les airs 
+pour faire un double saut"
+
+[node name="area_affichage_double_saut" type="Area2D" parent="."]
+script = ExtResource("1_tmnyq")
+
+[node name="area_affichage_double_saut_colli" type="CollisionShape2D" parent="area_affichage_double_saut"]
+position = Vector2(1437.5, 377)
+shape = SubResource("RectangleShape2D_ickow")

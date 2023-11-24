@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqha57ppv2to6"]
+[gd_scene load_steps=13 format=3 uid="uid://cqha57ppv2to6"]
 
+[ext_resource type="Script" path="res://Scripts/niveau_mousse/mossy_niv_1.gd" id="1_woim4"]
 [ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/niveaux/mossy_entre.tscn" id="2_nfnrh"]
 [ext_resource type="PackedScene" uid="uid://5iwxpo1xmo3i" path="res://Scenes/objets/coffre.tscn" id="3_dyfu3"]
 [ext_resource type="PackedScene" uid="uid://cl6gjqlxan551" path="res://Scenes/objets/feu.tscn" id="4_yheu6"]
@@ -7,9 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://dtyeib5gkd43u" path="res://Scenes/niveaux/sortie_mousse.tscn" id="6_1gma8"]
 [ext_resource type="AudioStream" uid="uid://bdy6nxlplepku" path="res://Assets/Musique/Ambient 1.mp3" id="6_psuvr"]
 [ext_resource type="AudioStream" uid="uid://bsxrxcftafjn1" path="res://Assets/Musique/Light Ambient 4 (Loop).mp3" id="6_ss1ac"]
-[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="8_8f44u"]
+[ext_resource type="PackedScene" uid="uid://dqb1j34xv6e0a" path="res://Scenes/niveaux/sortie_mousse_passage1.tscn" id="8_hpdbf"]
+[ext_resource type="PackedScene" uid="uid://dmllbqqoajuij" path="res://Scenes/niveaux/sorti_mousse_passage_2.tscn" id="9_bcrgy"]
+[ext_resource type="PackedScene" uid="uid://dp1f5n04yjiso" path="res://Scenes/niveaux/didactiel_feu.tscn" id="11_cg0ht"]
+[ext_resource type="PackedScene" uid="uid://qbb86qjdcjwn" path="res://Scenes/ennemis/zone_boss.tscn" id="12_qmuf5"]
 
 [node name="mossy_niv_1" type="Node2D"]
+script = ExtResource("1_woim4")
 
 [node name="mossy_entre" parent="." instance=ExtResource("2_nfnrh")]
 
@@ -26,7 +31,7 @@ position = Vector2(207, 177)
 position = Vector2(1077, 197)
 
 [node name="ennemi_champignon3" parent="." instance=ExtResource("5_2epn8")]
-position = Vector2(813, 589)
+position = Vector2(777, 584)
 
 [node name="sortie_mousse" parent="." instance=ExtResource("6_1gma8")]
 position = Vector2(-35, 71)
@@ -43,5 +48,13 @@ stream = ExtResource("6_psuvr")
 autoplay = true
 max_distance = 950.0
 
-[node name="crotus_body" parent="." instance=ExtResource("8_8f44u")]
-position = Vector2(567, 1416)
+[node name="sortie_mousse_passage1" parent="." instance=ExtResource("8_hpdbf")]
+position = Vector2(-11, 1623)
+
+[node name="sortie_mousse_passage2" parent="." instance=ExtResource("9_bcrgy")]
+position = Vector2(1301, 1423)
+
+[node name="didactiel_feu" parent="." instance=ExtResource("11_cg0ht")]
+
+[node name="zone_boss" parent="." instance=ExtResource("12_qmuf5")]
+position = Vector2(623, 1318)

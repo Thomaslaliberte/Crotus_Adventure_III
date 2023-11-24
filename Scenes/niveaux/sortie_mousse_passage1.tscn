@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqb1j34xv6e0a"]
+
+[ext_resource type="Script" path="res://Scripts/niveau_mousse/Sortie_mousse_passage.gd" id="1_rqess"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1q5u"]
+size = Vector2(282, 20)
+
+[node name="sortie_mousse_passage1" type="Area2D"]
+script = ExtResource("1_rqess")
+
+[node name="sortie_mousse_passage1_colli" type="CollisionShape2D" parent="."]
+position = Vector2(131, 0)
+shape = SubResource("RectangleShape2D_r1q5u")
