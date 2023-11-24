@@ -39,7 +39,6 @@ func _perdre_vie():
 
 
 func _on_detection_attaque_area_entered(area):
-	print(area)
 	if area.is_in_group("attaque_ennemie"):
 		_perdre_vie()
 		if vie <= 0:

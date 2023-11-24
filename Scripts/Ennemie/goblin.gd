@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var run_speed = 50.0
-var jump_speed = -40
+var jump_speed = -10
 var timer = Timer.new()
 var gravite = 950
 var vie = 2

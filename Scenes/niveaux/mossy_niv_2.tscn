@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://uhrcfht7s6wx"]
+[gd_scene load_steps=10 format=3 uid="uid://uhrcfht7s6wx"]
 
 [ext_resource type="PackedScene" uid="uid://dptaybmitd5cy" path="res://Scenes/niveaux/mossy_passage.tscn" id="1_8j80p"]
 [ext_resource type="Script" path="res://Scripts/niveau_mousse/mossy_niv_2.gd" id="1_ihvgv"]
@@ -20,9 +20,6 @@ position = Vector2(-8, 43)
 [node name="squelette_body" parent="." instance=ExtResource("2_dxvxy")]
 position = Vector2(431, 364)
 
-[node name="crotus_body" parent="." instance=ExtResource("3_1nmi1")]
-position = Vector2(43, 349)
-
 [node name="squelette_body3" parent="." instance=ExtResource("2_dxvxy")]
 position = Vector2(897, 149)
 
@@ -30,7 +27,7 @@ position = Vector2(897, 149)
 position = Vector2(733, 221)
 
 [node name="goblin_body" parent="." instance=ExtResource("4_furju")]
-position = Vector2(521, 824)
+position = Vector2(531, 771)
 
 [node name="sortie_passage_mousse_1" parent="." instance=ExtResource("5_o5owo")]
 position = Vector2(1287, -140)

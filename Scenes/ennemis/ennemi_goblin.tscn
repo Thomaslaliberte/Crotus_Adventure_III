@@ -278,7 +278,7 @@ animations = [{
 size = Vector2(38.7252, 45.8276)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jhcnp"]
-size = Vector2(674.089, 389.715)
+size = Vector2(1133.27, 757.068)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pt84i"]
 size = Vector2(54.2234, 65.6388)
@@ -337,7 +337,7 @@ scale = Vector2(0.705, 0.705)
 collision_layer = 0
 
 [node name="goblin_colli_attaque" type="CollisionShape2D" parent="goblin_area_attaque"]
-position = Vector2(-4.02396, 0)
+position = Vector2(0, -2.01197)
 scale = Vector2(0.705, 0.705)
 shape = SubResource("RectangleShape2D_jhcnp")
 

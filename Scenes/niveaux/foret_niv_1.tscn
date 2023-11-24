@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://br2jwcmc5t46n"]
+[gd_scene load_steps=14 format=3 uid="uid://br2jwcmc5t46n"]
 
 [ext_resource type="PackedScene" uid="uid://bqrg1mcec6mkx" path="res://Scenes/niveaux/foret_part_01.tscn" id="1_dgxfq"]
 [ext_resource type="Script" path="res://Scripts/niveau_foret/foret_niv_1.gd" id="1_j3lh1"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cbptg8gmxqnuv" path="res://Scenes/niveaux/didactiel_saut.tscn" id="9_3g6yk"]
 [ext_resource type="PackedScene" uid="uid://it315da7oqb1" path="res://Scenes/niveaux/didactiel_attaque.tscn" id="10_gqade"]
 [ext_resource type="PackedScene" uid="uid://cx0ksn776gjba" path="res://Scenes/niveaux/didactiel_glissade.tscn" id="11_12nxq"]
+[ext_resource type="PackedScene" uid="uid://05nphpu2ckri" path="res://Scenes/ennemis/ennemi_goblin.tscn" id="12_2d7vy"]
+[ext_resource type="PackedScene" uid="uid://bvb1b2wm3f010" path="res://Scenes/ennemis/ennemi_flottant.tscn" id="12_dtc6v"]
 
 [node name="foret_niv_1" type="Node2D"]
 script = ExtResource("1_j3lh1")
@@ -67,6 +69,13 @@ attenuation = 0.5
 [node name="didactiel_attaque" parent="." instance=ExtResource("10_gqade")]
 
 [node name="didactiel_glissade" parent="." instance=ExtResource("11_12nxq")]
+
+[node name="ennemi_flottant" parent="." instance=ExtResource("12_dtc6v")]
+position = Vector2(1858, 368)
+scale = Vector2(0.705, 0.705)
+
+[node name="goblin_body" parent="." instance=ExtResource("12_2d7vy")]
+position = Vector2(1045, 555)
 
 [connection signal="cacher" from="." to="bottle_area_2d" method="_on_foret_niv_1_cacher"]
 [connection signal="lever" from="glissade_area2d" to="." method="_on_glissade_area_2d_lever"]

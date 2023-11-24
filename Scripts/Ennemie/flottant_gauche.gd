@@ -4,7 +4,7 @@ extends "res://Scripts/etats_crotus/etat.gd"
 @export var acteur: CharacterBody2D
 
 func Initialisation():
-	acteur.get_node("flottant_anim").flip_h = false	
+	acteur.get_node("flottant_anim").flip_h = true
 	
 func Process(_delta):
 	acteur.velocity.x = -1*acteur.run_speed

@@ -15,7 +15,6 @@ func Initialisation():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process(_delta):
-	print("mort")
 	son_mort.emit()
 	acteur.velocity.x = 0
 	acteur.get_node("crotus_colli_mort").set_deferred("disabled", false)
