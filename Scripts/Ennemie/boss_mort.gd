@@ -14,3 +14,6 @@ func Initialisation():
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
 	acteur.velocity.x = 0
+	
+	if acteur.get_node("boss_anim").is_playing() == false:
+		queue_free()

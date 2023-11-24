@@ -23,11 +23,12 @@ func Initialisation():
 	
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
+	
 	if acteur.get_node("boss_anim").is_playing() == false and atk_fini:
 		acteur.get_node("atk_multi_area/atk_multi_colli").disabled = true
 		etat_change.emit("rien")
 	
-	if acteur.get_node("boss_anim").is_playing() == false:
+	if acteur.get_node("boss_anim").is_playing() == false and !atk_fini:
 		
 		atk_fini = true
 		acteur.velocity.y += acteur.jump_speed/5

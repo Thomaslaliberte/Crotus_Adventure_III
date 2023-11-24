@@ -4,7 +4,7 @@ var run_speed = 100
 var jump_speed = -1200
 var timer = Timer.new()
 var gravite = 950
-var vie = 40
+var vie = 20
 
 var cible
 var marker

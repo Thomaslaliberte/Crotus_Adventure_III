@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://btwxwcac44dyk"]
+[gd_scene load_steps=83 format=3 uid="uid://btwxwcac44dyk"]
 
 [ext_resource type="Texture2D" uid="uid://i85pipk1vysd" path="res://Assets/2D_SL_Knight_v1.0/Attacks.png" id="1_fjy8i"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/mossy_boss_body.gd" id="1_q3s3j"]
@@ -10,10 +10,12 @@
 [ext_resource type="Script" path="res://Scripts/Ennemie/boss_rien.gd" id="5_utq2r"]
 [ext_resource type="Texture2D" uid="uid://bqbu4wjbiy1pa" path="res://Assets/2D_SL_Knight_v1.0/Death.png" id="6_7d5ha"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/boss_atk_plonge.gd" id="7_a2enm"]
+[ext_resource type="Texture2D" uid="uid://do0lutwg50kxq" path="res://Assets/2D_SL_Knight_v1.0/Pray.png" id="7_u5t2f"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/boss_atk_multi.gd" id="8_eipsl"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/boss_atk_fonce.gd" id="9_e3fkw"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/boss_atk_vague.gd" id="12_4cf21"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/boss_mort.gd" id="13_1pxib"]
+[ext_resource type="Script" path="res://Scripts/Ennemie/boss_repo.gd" id="15_mofx1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er01k"]
 atlas = ExtResource("2_2fupa")
@@ -186,6 +188,38 @@ region = Rect2(128, 64, 128, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3orbc"]
 atlas = ExtResource("6_7d5ha")
 region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukd8j"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(256, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s16xr"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(384, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdb8j"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6mfx"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8c50"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(256, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wxp2"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(384, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a61x"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(0, 128, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gavgo"]
+atlas = ExtResource("7_u5t2f")
+region = Rect2(128, 128, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o87rt"]
 atlas = ExtResource("1_qx41p")
@@ -413,10 +447,48 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3orbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3orbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3orbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3orbc")
 }],
 "loop": false,
 "name": &"boss_mort",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukd8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s16xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdb8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6mfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8c50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wxp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a61x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gavgo")
+}],
+"loop": true,
+"name": &"boss_repos",
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -449,8 +521,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bfma7"]
-radius = 29.0
-height = 80.0
+radius = 24.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ylhjp"]
+radius = 16.0
+height = 96.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r251m"]
 size = Vector2(112, 80)
@@ -463,7 +539,7 @@ radius = 32.0
 height = 80.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puy05"]
-size = Vector2(654.5, 336.5)
+size = Vector2(384, 240.125)
 
 [node name="mossy_boss_body" type="CharacterBody2D" groups=["boss"]]
 script = ExtResource("1_q3s3j")
@@ -473,20 +549,27 @@ position = Vector2(-1.00001, 1)
 scale = Vector2(1.5625, 1.54688)
 sprite_frames = SubResource("SpriteFrames_txr53")
 animation = &"boss_mort"
-frame = 12
-frame_progress = 1.0
 
 [node name="boss_colli" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
+position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_bfma7")
 one_way_collision_margin = 2.0
+
+[node name="atk_plonge1_area" type="Area2D" parent="." groups=["attaque_ennemie"]]
+position = Vector2(0, 8)
+
+[node name="atk_plonge1_colli" type="CollisionShape2D" parent="atk_plonge1_area"]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_ylhjp")
+disabled = true
 
 [node name="atk_plonge2_area" type="Area2D" parent="." groups=["attaque_ennemie"]]
 visible = false
 position = Vector2(0, 14)
 
 [node name="atk_plonge2_colli" type="CollisionPolygon2D" parent="atk_plonge2_area"]
-polygon = PackedVector2Array(0, 42, 72, 26, 32, 10, 8, -30, -8, -30, -32, 10, -72, 26)
+polygon = PackedVector2Array(0, 58, 72, 26, 32, 10, 8, -30, -8, -30, -32, 10, -72, 26)
+disabled = true
 
 [node name="atk_multi_area" type="Area2D" parent="." groups=["attaque_ennemie"]]
 visible = false
@@ -505,14 +588,16 @@ shape = SubResource("RectangleShape2D_wl3ye")
 disabled = true
 
 [node name="boss_dmg_area" type="Area2D" parent="."]
+visible = false
 
 [node name="boss_dmg_area" type="CollisionShape2D" parent="boss_dmg_area"]
+visible = false
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_dbyuy")
 
 [node name="machine_etat" type="Node" parent="." node_paths=PackedStringArray("etat_actuel")]
 script = ExtResource("4_2aq2x")
-etat_actuel = NodePath("rien")
+etat_actuel = NodePath("repos")
 
 [node name="rien" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
 script = ExtResource("5_utq2r")
@@ -538,16 +623,19 @@ acteur = NodePath("../..")
 script = ExtResource("13_1pxib")
 acteur = NodePath("../..")
 
+[node name="repos" type="Node" parent="machine_etat" node_paths=PackedStringArray("acteur")]
+script = ExtResource("15_mofx1")
+acteur = NodePath("../..")
+
 [node name="tempo_area" type="Area2D" parent="."]
 visible = false
 collision_layer = 0
 
 [node name="tempo_colli" type="CollisionShape2D" parent="tempo_area"]
-position = Vector2(0, 8)
+position = Vector2(0, -32.0625)
 shape = SubResource("RectangleShape2D_puy05")
 
 [node name="dague_marker" type="Marker2D" parent="."]
-position = Vector2(-40, 0)
 
 [connection signal="area_entered" from="boss_dmg_area" to="machine_etat/rien" method="_on_boss_dmg_area_area_entered"]
 [connection signal="body_entered" from="tempo_area" to="machine_etat/rien" method="_on_tempo_area_body_entered"]
