@@ -16,7 +16,6 @@ func Initialisation():
 	acteur.get_node("goblin_anim").play("goblin_degat")
 	
 func Process(_delta):
-	print("ouill")
 	
 	if acteur.vie ==0:
 		etat_change.emit("mort")

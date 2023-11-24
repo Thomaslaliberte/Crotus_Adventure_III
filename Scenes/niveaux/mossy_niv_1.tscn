@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqha57ppv2to6"]
+[gd_scene load_steps=10 format=3 uid="uid://cqha57ppv2to6"]
 
 [ext_resource type="PackedScene" uid="uid://dv83ud5gawewv" path="res://Scenes/niveaux/mossy_entre.tscn" id="2_nfnrh"]
 [ext_resource type="PackedScene" uid="uid://5iwxpo1xmo3i" path="res://Scenes/objets/coffre.tscn" id="3_dyfu3"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dtyeib5gkd43u" path="res://Scenes/niveaux/sortie_mousse.tscn" id="6_1gma8"]
 [ext_resource type="AudioStream" uid="uid://bdy6nxlplepku" path="res://Assets/Musique/Ambient 1.mp3" id="6_psuvr"]
 [ext_resource type="AudioStream" uid="uid://bsxrxcftafjn1" path="res://Assets/Musique/Light Ambient 4 (Loop).mp3" id="6_ss1ac"]
+[ext_resource type="PackedScene" uid="uid://btwxwcac44dyk" path="res://Scenes/ennemis/mossy_boss_body.tscn" id="8_v1x37"]
+[ext_resource type="PackedScene" uid="uid://bpo4in3r31naa" path="res://Scenes/personnages/crotus_body.tscn" id="9_2hhmf"]
 
 [node name="mossy_niv_1" type="Node2D"]
 
@@ -41,3 +43,10 @@ position = Vector2(568, 0)
 stream = ExtResource("6_psuvr")
 autoplay = true
 max_distance = 950.0
+
+[node name="mossy_boss_body" parent="." instance=ExtResource("8_v1x37")]
+position = Vector2(987, 1412)
+
+[node name="crotus_body" parent="." instance=ExtResource("9_2hhmf")]
+position = Vector2(754, 1448)
+slide_on_ceiling = false
