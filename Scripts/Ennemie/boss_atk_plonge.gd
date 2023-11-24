@@ -47,6 +47,7 @@ func Process(_delta):
 		
 	if acteur.get_node("boss_anim").is_playing() == false:
 		acteur.get_node("atk_plonge2_area/atk_plonge2_colli").disabled = true
+		remove_child(timer_plonge)
 		etat_change.emit("rien")
 
 

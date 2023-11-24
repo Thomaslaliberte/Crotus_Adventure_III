@@ -7,7 +7,7 @@ var choix = 1
 var rng = RandomNumberGenerator.new()
 
 func Initialisation():
-	acteur.get_node("atk_plonge2_area/atk_plonge2_colli").disabled = true
+	acteur.get_node("atk_plonge2_area/atk_plonge2_colli").set_deferred("disabled", true)
 	
 	choix = 1
 	if choix ==1:

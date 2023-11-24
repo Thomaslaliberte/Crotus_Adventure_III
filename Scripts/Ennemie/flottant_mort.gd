@@ -15,3 +15,5 @@ func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
 	if acteur.is_on_floor():
 		acteur.get_node("flottant_anim").play("flottant_crepe")
+		await get_tree().create_timer(1).timeout
+		acteur.queue_free()

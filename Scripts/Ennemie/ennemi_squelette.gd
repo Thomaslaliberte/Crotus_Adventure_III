@@ -17,11 +17,6 @@ func _physics_process(_delta):
 	velocity.y += gravite * _delta
 	move_and_slide()
 	
-func _on_squelette_area_attaque_body_entered(body):
-	
-	if body.global_position.x <= self.global_position.x:
-		self.get_node("squelette_area_dmg/squelette_colli_dmg").position.x = -80
-	else:
-		self.get_node("squelette_area_dmg/squelette_colli_dmg").position.x = -24
+
 
 		

@@ -12,15 +12,17 @@ func Initialisation():
 	self.add_child(timer_dmg)
 	timer_dmg.one_shot = true
 	timer_dmg.start()
-	acteur.get_node("goblin_area_dmg/goblin_colli_dmg").disabled = true
+	acteur.get_node("goblin_area_dmg/goblin_colli_dmg").set_deferred("disabled", true)
 	acteur.get_node("goblin_anim").play("goblin_degat")
 	
 func Process(_delta):
 	
 	if acteur.vie ==0:
+		remove_child(timer_dmg)
 		etat_change.emit("mort")
 	
 	elif timer_dmg.is_stopped():
+		remove_child(timer_dmg)
 		etat_change.emit("chasse")
 	
 func _on_goblin_area_touche_area_entered(area):

@@ -638,4 +638,5 @@ shape = SubResource("RectangleShape2D_puy05")
 [node name="dague_marker" type="Marker2D" parent="."]
 
 [connection signal="area_entered" from="boss_dmg_area" to="machine_etat/rien" method="_on_boss_dmg_area_area_entered"]
+[connection signal="terminer" from="machine_etat/mort" to="." method="_on_mort_terminer"]
 [connection signal="body_entered" from="tempo_area" to="machine_etat/rien" method="_on_tempo_area_body_entered"]

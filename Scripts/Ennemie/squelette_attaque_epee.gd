@@ -25,14 +25,21 @@ func Process(_delta):
 func _on_squelette_anim_animation_finished():
 
 	acteur.get_node("squelette_area_dmg/squelette_colli_dmg").disabled = false
-	print(acteur.get_node("squelette_area_dmg/squelette_colli_dmg").disabled)
 	
 	if dernier_atk and acteur.vie !=0:
+		remove_child(timer_attaque)
 		etat_change.emit("rien")
 	elif acteur.vie !=0:
+		remove_child(timer_attaque)
 		Initialisation()
+		
 
 func _on_squelette_area_attaque_body_exited(body):
-		dernier_atk = true
+	#pour ne pas recevoir d'avertissement
+	body = body
+	dernier_atk = true
+
+
+
 
 

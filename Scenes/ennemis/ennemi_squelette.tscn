@@ -312,8 +312,6 @@ position = Vector2(16, 0)
 target_position = Vector2(0, 32)
 
 [connection signal="animation_finished" from="squelette_anim" to="machine_etat/attaque_epee" method="_on_squelette_anim_animation_finished"]
-[connection signal="area_entered" from="squelette_area_attaque" to="machine_etat/degat" method="_on_squelette_area_attaque_area_entered"]
-[connection signal="body_entered" from="squelette_area_attaque" to="." method="_on_squelette_area_attaque_body_entered"]
 [connection signal="body_entered" from="squelette_area_attaque" to="machine_etat/rien" method="_on_squelette_area_attaque_body_entered"]
 [connection signal="body_exited" from="squelette_area_attaque" to="machine_etat/attaque_epee" method="_on_squelette_area_attaque_body_exited"]
-[connection signal="body_entered" from="squelette_area_dmg" to="." method="_on_squelette_area_dmg_body_entered"]
+[connection signal="area_entered" from="squelette_area_touche" to="machine_etat/degat" method="_on_squelette_area_touche_area_entered"]

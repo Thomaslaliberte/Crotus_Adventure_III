@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal victoire
 var run_speed = 100
 var jump_speed = -1200
 var timer = Timer.new()
@@ -22,3 +22,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	
 
+
+
+func _on_mort_terminer():
+	victoire.emit()

@@ -4,6 +4,8 @@ extends "res://Scripts/etats_crotus/etat.gd"
 @export var acteur: CharacterBody2D
 
 func Initialisation():
+	acteur.get_node("attaque_droite_zone").get_child(0).disabled = true
+	acteur.get_node("attaque_gauche_zone").get_child(0).disabled = true
 	if acteur.is_on_floor():
 		acteur.get_child(0).play("crotus_rien")
 		acteur.velocity.x = 0

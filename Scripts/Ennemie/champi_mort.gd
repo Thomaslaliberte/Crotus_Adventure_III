@@ -17,3 +17,5 @@ func Initialisation():
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
 	acteur.velocity.x = 0
+	await get_tree().create_timer(1).timeout
+	acteur.queue_free()

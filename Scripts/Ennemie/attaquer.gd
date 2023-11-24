@@ -23,4 +23,5 @@ func Process(_delta):
 	if timer.is_stopped():
 		acteur.get_node("champi_area_atk_gauche").get_node("champi_colli_atk_gauche").disabled = true
 		acteur.get_node("champi_area_atk_droite").get_node("champi_colli_atk_droite").disabled = true
+		remove_child(timer)
 		etat_change.emit('rien')

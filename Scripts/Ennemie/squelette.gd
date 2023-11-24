@@ -31,15 +31,15 @@ func _on_timer_timeout():
 	acteur.timer.start()
 
 func _on_squelette_area_attaque_body_entered(body):
-	
 	if body.is_in_group("joueur"):
-		
 		if body.global_position.x <= acteur.global_position.x:
 			acteur.get_node("squelette_anim").flip_h = true
+			acteur.get_node("squelette_area_dmg/squelette_colli_dmg").position.x = -80
+			
 		else:
 			acteur.get_node("squelette_anim").flip_h = false
-		
+			acteur.get_node("squelette_area_dmg/squelette_colli_dmg").position.x = -24
+				
 		if body.vie != 0 or acteur.vie !=0:
 			etat_change.emit("attaque_epee")
-
 

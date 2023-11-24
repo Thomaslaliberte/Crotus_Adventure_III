@@ -44,7 +44,8 @@ func Process(_delta):
 			acteur.velocity.x = 10*acteur.run_speed
 	
 	if acteur.is_on_wall() and atk_fonce:
-		acteur.get_node("atk_fonce_area/atk_fonce_colli").disabled = true		
+		acteur.get_node("atk_fonce_area/atk_fonce_colli").disabled = true
+		remove_child(timer_fonce)
 		etat_change.emit("rien")
 		
 

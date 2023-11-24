@@ -23,6 +23,7 @@ func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
 	if acteur.is_on_floor() and timer.is_stopped():
 		fin.emit()
+		remove_child(timer)
 		etat_change.emit("rien")
 
 

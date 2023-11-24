@@ -16,8 +16,8 @@ scale = Vector2(5.85042, -7624.83)
 zoom = Vector2(0.8, 0.8)
 
 [node name="boutton_restart" type="TouchScreenButton" parent="."]
-position = Vector2(776, 708)
-scale = Vector2(0.703812, 0.879121)
+position = Vector2(728, 704)
+scale = Vector2(8.125, 13.25)
 texture_normal = ExtResource("1_6s33b")
 texture_pressed = ExtResource("2_e3tvi")
 action = "restart"

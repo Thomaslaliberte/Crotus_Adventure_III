@@ -21,7 +21,7 @@ script = ExtResource("1_j3lh1")
 script = null
 
 [node name="bottle_area_2d" parent="." instance=ExtResource("3_b35xr")]
-position = Vector2(2668, 403)
+position = Vector2(2207, -264)
 
 [node name="glissade_area2d" parent="." groups=["glissade"] instance=ExtResource("4_nfqdj")]
 position = Vector2(2748, 408)

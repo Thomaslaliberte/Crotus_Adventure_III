@@ -6,6 +6,7 @@ var timer = Timer.new()
 func Initialisation():
 	acteur.velocity.x = 0
 	timer.set_wait_time(0.4)
+	self.add_child(timer)
 	timer.one_shot = true
 	timer.start()
 	acteur.get_child(0).play("crotus_saut_fin")
@@ -15,6 +16,7 @@ func Initialisation():
 func Process(_delta):
 	acteur.velocity.y += acteur.gravite * _delta
 	if timer.is_stopped() and acteur.is_on_floor():
+		remove_child(timer)
 		etat_change.emit("rien")
 
 func _on_crotus_body_degat_crotus(area):
@@ -25,10 +27,3 @@ func _on_crotus_body_degat_crotus(area):
 			
 	else:
 		acteur.velocity.x += -acteur.run_speed
-	
-	
-	
-
-
-func _on_crotus_body_mort():
-	etat_change.emit("mort")

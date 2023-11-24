@@ -19,9 +19,11 @@ func Initialisation():
 func Process(_delta):
 	
 	if acteur.vie == 0:
+		remove_child(timer_dmg)
 		etat_change.emit("mort")
 		
 	elif timer_dmg.is_stopped():
+		remove_child(timer_dmg)
 		etat_change.emit("rien")
 	
 

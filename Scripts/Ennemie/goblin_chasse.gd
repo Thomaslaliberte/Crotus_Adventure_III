@@ -5,7 +5,7 @@ extends "res://Scripts/etats_crotus/etat.gd"
 func Initialisation():
 	acteur.run_speed = 70
 	acteur.get_node("goblin_anim").play("goblin_attaque")
-	acteur.get_node("goblin_area_dmg/goblin_colli_dmg").disabled = false
+	acteur.get_node("goblin_area_dmg/goblin_colli_dmg").set_deferred("disabled", false)
 	
 func Process(_delta):
 	
@@ -33,8 +33,9 @@ func Process(_delta):
 	
 
 func _on_goblin_area_attaque_body_exited(body):
-	if acteur.vie !=0:
-		etat_change.emit("rien")
+	if body.is_in_group("joueur"):
+		if acteur.vie !=0:
+			etat_change.emit("rien")
 
 
 func _on_goblin_area_attaque_body_entered(body):

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ahj7tm6dmou"]
+
+[ext_resource type="Texture2D" uid="uid://6ev3l6jl8xhx" path="res://Assets/ecran_fin/restart.png" id="1_bhit8"]
+[ext_resource type="Texture2D" uid="uid://ldenjd82cd1f" path="res://Assets/ecran_fin/victoire.png" id="1_leatp"]
+[ext_resource type="Texture2D" uid="uid://tlxjjxlp0hrd" path="res://Assets/ecran_fin/restart_appuyer.png" id="2_0lcl4"]
+
+[node name="ecran_victoire" type="Node"]
+
+[node name="message_victoire" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(664, -30.3745)
+scale = Vector2(2.13243, 3.22694)
+texture = ExtResource("1_leatp")
+
+[node name="Camera2D" type="Camera2D" parent="message_victoire"]
+position = Vector2(0, -31.8442)
+zoom = Vector2(0.8, 0.8)
+
+[node name="boutton_restart" type="TouchScreenButton" parent="."]
+z_index = 10
+position = Vector2(432, 56)
+scale = Vector2(8.125, 10)
+texture_normal = ExtResource("1_bhit8")
+texture_pressed = ExtResource("2_0lcl4")
+action = "restart"

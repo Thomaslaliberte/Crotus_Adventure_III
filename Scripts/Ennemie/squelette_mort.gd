@@ -17,4 +17,5 @@ func Process(_delta):
 	acteur.get_node("squelette_area_dmg/squelette_colli_dmg").disabled = true
 	acteur.velocity.y += acteur.gravite * _delta
 	acteur.velocity.x = 0
-
+	await get_tree().create_timer(1).timeout
+	acteur.queue_free()

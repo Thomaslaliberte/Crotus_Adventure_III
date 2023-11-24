@@ -31,4 +31,5 @@ func Process(_delta):
 func _on_timer_attaque_timeout():
 	acteur.velocity.y = 0
 	acteur.velocity.x = 0
+	remove_child(timer_attaque)
 	etat_change.emit("chasse")
