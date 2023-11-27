@@ -8,7 +8,6 @@ signal restart_crotus
 signal pas_afficher_vie
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	get_child(0).position.x = 70
 	get_child(0).position.y = 532
 	get_child(0).saut_x2 = 0
@@ -79,9 +78,7 @@ func _on_sortie_mousse_passage2_sortie():
 	add_child(niv)
 	get_child(0).position.x = 1415
 	get_child(0).position.y = -100
-	
-	get_child(1).get_node('sortie_foret').sortie_foret.connect(_on_sortie_foret_sortie)
-	
+
 	get_child(1).get_node('sortie_passage_mousse_1').sortie_passage_mousse_1.connect(_on_sortie_passage_mousse_1_sortie)		
 	
 	get_child(1).cacher_saut = true

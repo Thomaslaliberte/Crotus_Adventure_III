@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://uhrcfht7s6wx"]
+[gd_scene load_steps=11 format=3 uid="uid://uhrcfht7s6wx"]
 
 [ext_resource type="PackedScene" uid="uid://dptaybmitd5cy" path="res://Scenes/niveaux/mossy_passage.tscn" id="1_8j80p"]
 [ext_resource type="Script" path="res://Scripts/niveau_mousse/mossy_niv_2.gd" id="1_ihvgv"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bk6povoivqmxg" path="res://Assets/Musique/Ambient 3.mp3" id="8_qso8d"]
 [ext_resource type="PackedScene" uid="uid://cl6gjqlxan551" path="res://Scenes/objets/feu.tscn" id="9_wshyt"]
 [ext_resource type="PackedScene" uid="uid://034qon3xb30q" path="res://Scenes/niveaux/didactiel_double_saut.tscn" id="10_8xxs3"]
+[ext_resource type="PackedScene" uid="uid://cdfq35481214f" path="res://Scenes/ennemis/ennemi_champignon.tscn" id="10_lewfg"]
 
 [node name="mossy_niv_2" type="Node2D"]
 position = Vector2(9, -372)
@@ -45,5 +46,14 @@ max_distance = 200000.0
 position = Vector2(159, 785)
 
 [node name="didactiel_double_saut" parent="." instance=ExtResource("10_8xxs3")]
+
+[node name="ennemi_champignon" parent="." instance=ExtResource("10_lewfg")]
+position = Vector2(926, 864)
+
+[node name="goblin_body2" parent="." instance=ExtResource("4_furju")]
+position = Vector2(1867, 318)
+
+[node name="squelette_body4" parent="." instance=ExtResource("2_dxvxy")]
+position = Vector2(1783, 50)
 
 [connection signal="cacher" from="." to="rune_saut_area_2d" method="_on_mossy_niv_2_cacher"]

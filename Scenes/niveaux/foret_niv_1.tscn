@@ -71,11 +71,25 @@ attenuation = 0.5
 [node name="didactiel_glissade" parent="." instance=ExtResource("11_12nxq")]
 
 [node name="ennemi_flottant" parent="." instance=ExtResource("12_dtc6v")]
-position = Vector2(1858, 368)
-scale = Vector2(0.705, 0.705)
+position = Vector2(2017, 332)
+
+[node name="ennemi_flottant2" parent="." instance=ExtResource("12_dtc6v")]
+position = Vector2(2541, 103)
+
+[node name="ennemi_flottant3" parent="." instance=ExtResource("12_dtc6v")]
+position = Vector2(2052, -48)
 
 [node name="goblin_body" parent="." instance=ExtResource("12_2d7vy")]
 position = Vector2(1045, 555)
+
+[node name="goblin_body2" parent="." instance=ExtResource("12_2d7vy")]
+position = Vector2(2687, 226)
+
+[node name="goblin_body3" parent="." instance=ExtResource("12_2d7vy")]
+position = Vector2(2634, 225)
+
+[node name="goblin_body4" parent="." instance=ExtResource("12_2d7vy")]
+position = Vector2(2578, 225)
 
 [connection signal="cacher" from="." to="bottle_area_2d" method="_on_foret_niv_1_cacher"]
 [connection signal="lever" from="glissade_area2d" to="." method="_on_glissade_area_2d_lever"]

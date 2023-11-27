@@ -13,7 +13,7 @@ func Process(_delta):
 	var droite: bool = Input.is_action_pressed("droite")
 	var gauche: bool = Input.is_action_pressed("gauche")
 	var sauter: bool = Input.is_action_just_pressed("sauter")
-
+	var attaque: bool = Input.is_action_just_pressed("attaque")
 	
 	if sauter:
 		if acteur.saut_x2 == 1:
@@ -24,3 +24,5 @@ func Process(_delta):
 	if acteur.is_on_floor():
 		etat_change.emit("rien")
 
+	if attaque:
+		etat_change.emit("attaque")

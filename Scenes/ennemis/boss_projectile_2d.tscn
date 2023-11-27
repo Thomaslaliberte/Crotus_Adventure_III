@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1ev3dtyu2ypd"]
 
-[ext_resource type="Texture2D" uid="uid://b8obwbwvsrmmj" path="res://Assets/Mystic RPG icon pack/Sprites/200%/Sword_9.png" id="1_csfvb"]
 [ext_resource type="Script" path="res://Scripts/Ennemie/boss_projectile_2d.gd" id="1_formn"]
+[ext_resource type="Texture2D" uid="uid://c6rfphphni0m7" path="res://Assets/Mystic RPG icon pack/Sprites/100%/Sword_9.png" id="2_3ekfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j35si"]
 size = Vector2(48, 20)
@@ -10,8 +10,10 @@ size = Vector2(48, 20)
 script = ExtResource("1_formn")
 
 [node name="projectile_sprite" type="Sprite2D" parent="."]
+position = Vector2(0.239862, 0.201411)
 rotation = 0.785398
-texture = ExtResource("1_csfvb")
+scale = Vector2(2.08185, 2.08796)
+texture = ExtResource("2_3ekfa")
 
 [node name="projectile_colli" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(24, 0, 16, -8, -16, -8, -24, 0, -16, 8, 16, 8)

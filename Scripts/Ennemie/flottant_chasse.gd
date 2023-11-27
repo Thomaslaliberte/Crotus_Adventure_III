@@ -33,8 +33,7 @@ func Process(_delta):
 		acteur.velocity.y =0
 
 func _on_flottant_attaque_area_body_exited(body):
-	body = body #pas d'erreur
-	if acteur.vie !=0:
+	if body.is_in_group("joueur") and acteur.vie !=0:
 		etat_change.emit("rien")
 
 

@@ -10,7 +10,6 @@ func Initialisation():
 	timer.one_shot = true
 	timer.start()
 	acteur.get_child(0).play("crotus_saut_fin")
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process(_delta):

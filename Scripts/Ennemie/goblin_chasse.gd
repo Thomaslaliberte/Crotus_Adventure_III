@@ -3,7 +3,7 @@ extends "res://Scripts/etats_crotus/etat.gd"
 @export var acteur: CharacterBody2D
 
 func Initialisation():
-	acteur.run_speed = 70
+	acteur.run_speed = 110
 	acteur.get_node("goblin_anim").play("goblin_attaque")
 	acteur.get_node("goblin_area_dmg/goblin_colli_dmg").set_deferred("disabled", false)
 	

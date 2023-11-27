@@ -15,9 +15,12 @@ func Process(_delta):
 	
 	var droite: bool = Input.is_action_pressed("droite")
 	var gauche: bool = Input.is_action_pressed("gauche")
+	var attaque: bool = Input.is_action_just_pressed("attaque")
 	
 	if droite or gauche:
 		etat_change.emit("course") 
 	if acteur.is_on_floor():
 		etat_change.emit("rien")
 
+	if attaque:
+		etat_change.emit("attaque")
