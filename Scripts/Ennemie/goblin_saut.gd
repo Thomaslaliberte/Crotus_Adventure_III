@@ -8,7 +8,7 @@ func Initialisation():
 	
 func Process(_delta):
 
-	acteur.velocity.y += acteur.jump_speed
+	acteur.velocity.y = acteur.jump_speed*7
 
 	if acteur.is_on_wall() == false:
 		acteur.velocity.y += acteur.jump_speed
